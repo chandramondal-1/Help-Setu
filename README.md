@@ -2,7 +2,7 @@
 
 **Find the right help. Fast.**
 
-> **Version 1.2.4** — hardened Android WebView (no file access, strict navigation), canonical share links, scoped service-worker cache cleanup, and no embedded signing password. Also includes 139-only railway help and verified sources.
+> **Version 1.2.5** — easier **Find Help**: one-tap problem tiles, a focused guided answer with clear steps and call buttons, and smarter Hinglish / natural-language search. Also keeps the 1.2.4 WebView hardening, canonical share links, scoped cache cleanup and verified sources.
 
 HelpSetu is a free, independent, offline-first directory of essential Indian public services and emergency helplines. It is built to be simple enough for a 70-year-old and a 5-year-old: one clear action per screen, big touch targets, plain language, and no ads or tracking.
 
@@ -11,7 +11,7 @@ HelpSetu is a free, independent, offline-first directory of essential Indian pub
 ## What it does
 
 - **One-tap calling** through standard `tel:` links. HelpSetu never places a call by itself.
-- **Problem search** — “train toilet dirty”, “gas leak”, “UPI fraud”, “bike broken” — with a short “what to do now” guide before the number.
+- **Problem search** — type it naturally in English or Hinglish (“train toilet dirty”, “gas chalu hai”, “paisa chala gaya”, “bike kharab”, “biji nahi hai”) or tap a big problem tile. Each result opens a short “what to do now” guide with a one-tap call button. Voice search and example phrases are available too.
 - **25 Indian languages**: English, हिंदी, বাংলা and 22 more regional languages (Marathi, Tamil, Telugu, Gujarati, Kannada, Malayalam, Punjabi, Odia, Assamese, Urdu, Nepali, Sanskrit, Maithili, Santali, Konkani, Dogri, Manipuri, Sindhi, Bhojpuri, Awadhi, Marwari and Tulu). Machine-translated packs are marked **Auto**; numbers and official links never change.
 - **Mobile-only layout**, constrained to a phone-width column, with big touch targets and light / dark themes.
 - **Always updatable**: a PWA update bar on the web, and an installable signed APK that can be replaced with a newer build.
@@ -40,7 +40,7 @@ Do not open `index.html` directly with `file://` if you want the service worker 
 
 Browsers keep the app shell in the service-worker cache. When you change `styles.css`, `data.js`, `i18n.js`, `core.js`, `views.js` or `views2.js`, update the release version in **both** places:
 
-1. `VERSION` in `sw.js` (for example `helpsetu-v1.2.4`);
+1. `VERSION` in `sw.js` (for example `helpsetu-v1.2.5`);
 2. the `?v=` query on every cached asset in `index.html` and in the `CORE` list in `sw.js`.
 
 The service worker then installs the new files and deletes the old cache. Users see a **“A new version is ready”** bar with **Update now**; Settings → **Check for updates** also checks immediately. In the APK the same button triggers the silent web-bundle updater.
@@ -77,7 +77,7 @@ node tools/validate.mjs
 
 ### Android APK (offline, no Play Store needed)
 
-A signed, installable `HelpSetu-1.2.4.apk` is included in the repository root. Copy it to an Android phone (Android 5.0 / API 21 or newer), open it, and tap **Install**. You may need to allow “Install unknown apps” once in your browser or file manager. The APK bundles the whole app, so it works offline immediately — no login, no data connection needed.
+A signed, installable `HelpSetu-1.2.5.apk` is included in the repository root. Copy it to an Android phone (Android 5.0 / API 21 or newer), open it, and tap **Install**. You may need to allow “Install unknown apps” once in your browser or file manager. The APK bundles the whole app, so it works offline immediately — no login, no data connection needed.
 
 The APK opens directly to the home screen. Calls use the phone's dialer through standard `tel:` links (the number is filled in; the app never calls on its own). External official links and the developer WhatsApp open in their respective apps.
 
@@ -88,7 +88,7 @@ export HELPSETU_STOREPASS='...'   # or omit this and type it at the prompt
 bash android/build.sh
 ```
 
-This produces `HelpSetu-1.2.4.apk` and verifies its signature with `apksigner`. The signing password is **never stored in the repository**: supply it as `HELPSETU_STOREPASS` (for CI) or type it interactively. The release keystore is created under `android/keystore/` on first build and is git-ignored — keep both the keystore and its password safe so future updates keep the same signing identity. `android/update.json` describes the latest release for future in-app update checks.
+This produces `HelpSetu-1.2.5.apk` and verifies its signature with `apksigner`. The signing password is **never stored in the repository**: supply it as `HELPSETU_STOREPASS` (for CI) or type it interactively. The release keystore is created under `android/keystore/` on first build and is git-ignored — keep both the keystore and its password safe so future updates keep the same signing identity. `android/update.json` describes the latest release for future in-app update checks.
 
 The WebView does not use `file://`. App files are served from a local https origin (`appassets.androidplatform.net`) intercepted by the wrapper, so file, content and file-from-file access are all disabled. Navigation is restricted: phone links open the dialer, external web links open the browser, and every other scheme is blocked. The app also skips service-worker registration inside the APK so silent web-bundle swaps cannot serve stale cached content.
 
@@ -107,12 +107,12 @@ data-i18n.js            Generated translation overlay for the service catalogue
 core.js                 State, routing, search, theme, language, sheets, updates, offline
 views.js                Home, search, category and service-detail views
 views2.js               Saved, settings, state picker, about, privacy, emergency
-sw.js                   Offline app-shell cache (v1.2.4)
+sw.js                   Offline app-shell cache (v1.2.5)
 manifest.webmanifest    PWA metadata and shortcuts
 icons/                  SVG and generated PNG icons
 data/                   Curated source catalogue and cached translations
 android/                WebView wrapper, launcher icons, build.sh, update.json and web-bundle.zip
-HelpSetu-1.2.4.apk      Signed, installable APK
+HelpSetu-1.2.5.apk      Signed, installable APK
 tools/build-data.mjs    Merges curated data with verified source records → data.js
 tools/validate.mjs      Checks ids, numbers, sources, dates, links and translations
 ```

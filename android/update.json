@@ -1,12 +1,12 @@
 {
-  "version": "1.2.4",
-  "versionCode": 6,
-  "apkUrl": "https://github.com/chandramondal-1/Help-Setu/releases/latest/download/HelpSetu-1.2.4.apk",
-  "notes": "HelpSetu 1.2.4 — hardened Android WebView with no file access and strict navigation, canonical share links, scoped service-worker cache cleanup, and no embedded signing password. Railway help uses 139 only.",
+  "version": "1.2.5",
+  "versionCode": 7,
+  "apkUrl": "https://github.com/chandramondal-1/Help-Setu/releases/latest/download/HelpSetu-1.2.5.apk",
+  "notes": "HelpSetu 1.2.5 — easier Find Help: one-tap problem tiles, a focused guided answer with clear steps and call buttons, and smarter Hinglish/natural-language search. Includes the 1.2.4 WebView security fixes.",
   "supportWhatsApp": "https://wa.me/918371998257",
   "web": {
-    "version": 10,
+    "version": 11,
     "file": "android/web-bundle.zip",
-    "sha256": "627a5f137845bebcf7ad9859b3ac7de0cfb23f5b4d5cc4cf02c4c07c805086bb"
+    "sha256": "1a1d5827101424d506d22158f08854bfc31b9f2bbbaa0562ccf679b774721a3c"
   }
 }

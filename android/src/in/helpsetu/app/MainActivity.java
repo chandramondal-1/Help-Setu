@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
     private static final String RAW_BASE =
             "https://raw.githubusercontent.com/chandramondal-1/Help-Setu/";
     /** Version of the web files bundled inside this APK. */
-    private static final int BUNDLED_WEB_VERSION = 10;
+    private static final int BUNDLED_WEB_VERSION = 11;
 
     /**
      * The WebView loads its files from a local https origin instead of file://.
@@ -117,7 +117,7 @@ public class MainActivity extends Activity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             s.setMediaPlaybackRequiresUserGesture(true);
         }
-        s.setUserAgentString(s.getUserAgentString() + " HelpSetuAndroid/1.2.4");
+        s.setUserAgentString(s.getUserAgentString() + " HelpSetuAndroid/1.2.5");
 
         final WebViewClient client = new WebViewClient() {
             @Override
@@ -317,7 +317,7 @@ public class MainActivity extends Activity {
         HttpURLConnection c = (HttpURLConnection) new URL(urlString).openConnection();
         c.setConnectTimeout(8000);
         c.setReadTimeout(15000);
-        c.setRequestProperty("User-Agent", "HelpSetuAndroid/1.2.4");
+        c.setRequestProperty("User-Agent", "HelpSetuAndroid/1.2.5");
         c.setRequestProperty("Accept", "application/vnd.github+json");
         try {
             if (c.getResponseCode() != HttpURLConnection.HTTP_OK) {
@@ -339,7 +339,7 @@ public class MainActivity extends Activity {
         HttpURLConnection c = (HttpURLConnection) new URL(urlString).openConnection();
         c.setConnectTimeout(8000);
         c.setReadTimeout(30000);
-        c.setRequestProperty("User-Agent", "HelpSetuAndroid/1.2.4");
+        c.setRequestProperty("User-Agent", "HelpSetuAndroid/1.2.5");
         try {
             if (c.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 throw new IOException("HTTP " + c.getResponseCode());

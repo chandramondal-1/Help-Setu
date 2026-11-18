@@ -3,17 +3,24 @@
   'use strict';
   const {
     D, state, t, L, esc, icon, telHref, waHref, fmtDate, categoryName, serviceName, servicePurpose,
-    scopeText, isFav, SERVICE_BY_ID, CAT_BY_ID, CATEGORIES, SERVICES, INTENTS, STATES, STATE_BY_CODE,
+    scopeText, isFav, SERVICE_BY_ID, INTENT_BY_ID, CAT_BY_ID, CATEGORIES, SERVICES, INTENTS, STATES, STATE_BY_CODE,
     search, servicesForCategory, countStateServices,
   } = HS;
 
   const views = {};
   const POPULAR = ['national-railmadad-139', 'national-nhai-highway-1033', 'in-lpg-emergency-1906', 'national-cybercrime-1930', 'consumer-1915', 'national-womenhelpline-181', 'national-childhelpline-1098', 'national-ambulance-108'];
+  // The problems people search for most. One tap opens a guided answer with
+  // clear steps and a one-tap call button — no typing or reading required.
+  const QUICK_PROBLEMS = [
+    'need-ambulance', 'fire', 'woman-in-danger', 'gas-leak',
+    'online-financial-fraud', 'highway-breakdown', 'train-late-status', 'poison-snakebite',
+  ];
 
   /* ---------------- shared components ---------------- */
   const catOf = (s) => CAT_BY_ID.get(s.category);
   const catIcon = (s) => (catOf(s)?.icon || 'info');
   const catColor = (s) => (catOf(s)?.color || 'indigo');
+  const firstServiceOf = (it) => (it.serviceIds || []).map((id) => SERVICE_BY_ID.get(id)).find(Boolean);
 
   function pillScope(s) {
     return `<span class="pill state">${icon('pin')}${esc(scopeText(s))}</span>`;
@@ -45,16 +52,18 @@
   }
 
   function intentCard(it) {
-    const first = (it.serviceIds || []).map((id) => SERVICE_BY_ID.get(id)).find(Boolean);
+    const first = firstServiceOf(it);
+    const num = first && (first.number || first.dial);
     const steps = (it.steps && (it.steps[state.lang] || it.steps.en)) || [];
     return `<article class="intent-card">
       <div class="intent-eyebrow">${icon('spark')} ${esc(t('search.likely'))}</div>
-      <h2 class="intent-title">${esc(L(it.title))}</h2>
-      ${steps.length ? `<ol class="intent-steps">${steps.slice(0, 3).map((x, i) => `<li><span class="n">${i + 1}</span><span>${esc(x)}</span></li>`).join('')}</ol>` : ''}
+      <h2 class="intent-title"><a href="#/problem/${esc(it.id)}">${esc(L(it.title))}</a></h2>
+      ${steps.length ? `<div class="result-group-title" style="margin-top:14px">${esc(t('search.steps'))}</div>
+      <ol class="intent-steps">${steps.slice(0, 3).map((x, i) => `<li><span class="n">${i + 1}</span><span>${esc(x)}</span></li>`).join('')}</ol>` : ''}
       <div class="intent-actions">
-        ${first?.number ? `<a class="btn btn-primary" href="${telHref(first.number)}" data-recent="${esc(first.id)}">${icon('phone')} ${esc(t('search.callNow', { number: first.number }))}</a>` : ''}
+        ${num ? `<a class="btn btn-primary" href="${telHref(num)}" data-recent="${esc(first.id)}">${icon('phone')} ${esc(t('search.callNow', { number: num }))}</a>` : ''}
         ${first?.officialUrl ? `<a class="btn btn-secondary" href="${esc(first.officialUrl)}" target="_blank" rel="noopener">${icon('external')} ${esc(t('search.openNow'))}</a>` : ''}
-        ${first ? `<a class="btn btn-secondary" href="#/service/${esc(first.id)}">${esc(t('search.seeService'))}</a>` : ''}
+        <a class="btn btn-secondary" href="#/problem/${esc(it.id)}">${esc(t('search.seeService'))}</a>
       </div>
     </article>`;
   }
@@ -101,6 +110,25 @@
       <button class="search-submit mic-btn" type="button" data-action="voice" id="${id}-mic" aria-label="${esc(t('a11y.voice'))}">${icon('mic')}</button>
       <button class="search-submit" type="submit" aria-label="${esc(t('home.searchBtn'))}">${icon('arrowRight')}</button>
     </form>`;
+  }
+
+  function problemTiles() {
+    return `<div class="problem-grid">
+      <a class="problem-tile problem-tile--big" href="tel:112">
+        <span class="p-ic">${icon('sos')}</span>
+        <span class="p-tx"><b>${esc(t('common.emergencyShort'))}</b><small>${esc(t('common.tapToCall'))}</small></span>
+      </a>${QUICK_PROBLEMS.map((id) => {
+      const it = INTENT_BY_ID.get(id);
+      if (!it) return '';
+      const first = firstServiceOf(it);
+      const num = first && (first.number || first.dial);
+      const sub = num ? t('search.callNow', { number: num })
+        : first ? t('common.onlineOnly') : '';
+      return `<a class="problem-tile" href="#/problem/${esc(it.id)}">
+        <span class="p-ic">${icon(it.icon || 'spark')}</span>
+        <span class="p-tx"><b>${esc(L(it.title))}</b>${sub ? `<small>${esc(sub)}</small>` : ''}</span>
+      </a>`;
+    }).join('')}</div>`;
   }
 
   function categoryGrid() {
@@ -214,9 +242,8 @@
       return `<div class="section">
         <div class="result-group-title">${esc(t('search.startTitle'))}</div>
         <p class="section-sub" style="margin-bottom:14px">${esc(t('search.startHint'))}</p>
-        <div class="chips" style="flex-wrap:wrap;overflow:visible;padding-top:0">
-          ${INTENTS.slice(0, 10).map((it) => `<a class="chip" href="#/search?q=${encodeURIComponent(L(it.title))}">${icon('spark')}${esc(L(it.title))}</a>`).join('')}
-        </div>
+        <div class="section-label">${icon('spark')} ${esc(t('home.tryLabel'))}</div>
+        ${problemTiles()}
         <div class="section-head" style="margin-top:28px"><h2 class="section-title">${esc(t('search.browse'))}</h2></div>
         ${categoryGrid()}
       </div>`;
@@ -281,6 +308,46 @@
           });
         });
         document.title = q ? `${q} — HelpSetu` : `${t('search.title')} — HelpSetu`;
+        window.scrollTo(0, 0);
+      },
+    };
+  };
+
+  /* ---------------- guided problem answer ---------------- */
+  views.problem = (route) => {
+    const it = INTENT_BY_ID.get(route.id);
+    if (!it) return views.search({ params: new URLSearchParams() });
+    const steps = (it.steps && (it.steps[state.lang] || it.steps.en)) || [];
+    const related = (it.serviceIds || []).map((id) => SERVICE_BY_ID.get(id)).filter(Boolean);
+    const first = firstServiceOf(it);
+    const num = first && (first.number || first.dial);
+    const localOnly = !related.length;
+
+    return {
+      html: `<div class="problem-top">
+        <a class="back-btn" href="#/search">${icon('arrowLeft')} ${esc(t('common.back'))}</a>
+        <div class="page-head" style="margin-top:16px">
+          <h1 class="page-title">${esc(L(it.title))}</h1>
+          <p class="page-sub">${esc(t('search.likely'))}</p>
+        </div>
+        ${num ? `<a class="btn btn-primary" style="min-height:60px;margin-top:18px;width:100%;font-size:1.05rem" href="${telHref(num)}" data-recent="${esc(first.id)}">${icon('phone')} ${esc(t('search.callNow', { number: num }))}</a>` : ''}
+        ${steps.length ? `<section class="intent-card" style="margin-top:16px">
+          <div class="intent-eyebrow">${icon('spark')} ${esc(t('search.steps'))}</div>
+          <ol class="intent-steps">${steps.map((x, i) => `<li><span class="n">${i + 1}</span><span>${esc(x)}</span></li>`).join('')}</ol>
+        </section>` : ''}
+        ${localOnly ? `<div class="empty" style="margin-top:20px">
+          <div class="empty-icon">${icon('pin')}</div>
+          <h2>${esc(t('category.chooseState'))}</h2>
+          <a class="btn btn-primary" href="#/state">${esc(t('category.chooseStateBtn'))}</a>
+        </div>` : `<section style="margin-top:24px">
+          <div class="result-group-title">${esc(t('search.allResults'))}</div>
+          <div class="service-list">${related.map((s) => serviceCard(s)).join('')}</div>
+        </section>`}
+        <a class="btn btn-secondary" style="min-height:56px;margin-top:22px;width:100%" href="tel:112">${icon('sos')} ${esc(t('common.emergencyShort'))}</a>
+      </div>
+      ${footerNote()}`,
+      mount() {
+        document.title = `${L(it.title)} — HelpSetu`;
         window.scrollTo(0, 0);
       },
     };

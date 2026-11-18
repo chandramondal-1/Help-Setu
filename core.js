@@ -34,6 +34,7 @@
   const CATEGORIES = D.categories;
   const STATES = D.states;
   const SERVICE_BY_ID = new Map(SERVICES.map((s) => [s.id, s]));
+  const INTENT_BY_ID = new Map(INTENTS.map((it) => [it.id, it]));
   const CAT_BY_ID = new Map(CATEGORIES.map((c) => [c.id, c]));
   const STATE_BY_CODE = new Map(STATES.map((s) => [s.code, s]));
   const LS_KEY = 'helpsetu.v1';
@@ -67,7 +68,7 @@
     };
   }
 
-  const APP_VERSION = '1.2.4';
+  const APP_VERSION = '1.2.5';
   const prefs = loadPrefs();
   const state = {
     ...prefs, sheet: null, installEvent: null, speaking: false, query: '',
@@ -417,6 +418,36 @@
     pension: ['pension'], penson: ['pension'],
     harassment: ['harass'], haras: ['harassment'], harras: ['harassment'], nirapotta: ['harassment', 'police'],
     stray: ['animal'], dog: ['animal'], animal: ['animal'],
+    chalu: ['leak'], biji: ['electricity'],
+    saap: ['snake'], dava: ['poison'], ladai: ['fight'], jhagda: ['fight'],
+    vakeel: ['lawyer'], lawyer: ['legal'], legal: ['lawyer'], bache: ['child'],
+    der: ['late'], kata: ['deducted'],
+  };
+
+  // Everyday ways people describe a problem. A phrase match is much more
+  // reliable than single words: "gas chalu hai" or "paisa chala gaya" should
+  // open the right guided answer, even when the exact English phrase is not
+  // in the question. These point to the problem guides that already carry
+  // verified numbers.
+  const PROBLEM_ALIASES = {
+    'gas-leak': ['gas chalu', 'gas ki mahak', 'gas mahak', 'lpg chalu', 'gas leak'],
+    'need-ambulance': ['ambulance chahiye', 'ambulance bhejo', 'ambulance bulao', 'ambulance call'],
+    'online-financial-fraud': ['paisa chala gaya', 'paise chale gaye', 'paisa kata', 'paisa gayi', 'money deducted', 'upi se paisa', 'upi fraud'],
+    'train-security-medical': ['train me chori', 'train me ladai', 'train me harass', 'train me emergency'],
+    'electricity-water': ['biji nahi', 'bijli nahi', 'bijli gayi', 'bijli chali gayi', 'light nahi', 'pani nahi'],
+    'highway-breakdown': ['bike kharab', 'bike bigad', 'car kharab', 'gaadi kharab', 'tyre phat', 'flat tyre'],
+    'poison-snakebite': ['saap kaat', 'saap ne kaata', 'saanp kaat', 'snake bite', 'dava khaya', 'poison khaya'],
+    'fire': ['aag lag', 'aag laga', 'aag lagi', 'dhuwan'],
+    'woman-in-danger': ['ladai ho rahi', 'ghar me ladai', 'mahila', 'woman danger'],
+    'legal-help': ['lawyer chahiye', 'vakeel chahiye', 'free lawyer'],
+    'pnr-status': ['ticket confirm', 'ticket confirmed', 'ticket ka pnr'],
+    'train-late-status': ['train late', 'train der', 'train kab aayegi'],
+    'mental-distress': ['bahut udaas', 'man kharab'],
+    'lost-child': ['bachcha kho gaya', 'bache ka'],
+    'consumer-refund': ['paisa wapas', 'refund nahi'],
+    'bank-atm-problem': ['atm se paisa', 'atm kharab', 'atm me paisa'],
+    'elder-abuse': ['buzurg', 'old parents', 'senior citizen'],
+    'highway-accident': ['road accident', 'car crash', 'hadsa'],
   };
 
   function queryTokens(q) {
@@ -537,6 +568,12 @@
     const scoredIntents = [];
     for (const it of INTENTS) {
       let score = 0;
+      // A phrase the person commonly says is a strong signal. Keep it separate
+      // so token matching cannot wipe it out below.
+      let aliasHit = false;
+      for (const alias of PROBLEM_ALIASES[it.id] || []) {
+        if (nq.includes(norm(alias))) { aliasHit = true; break; }
+      }
       if (it._text.includes(nq) && nq.length >= 3) score += 120;
       let matched = 0;
       for (const tok of qTokens) {
@@ -563,13 +600,39 @@
       const rawScore = rawTokens.length ? (rawMatched / rawTokens.length) * 74 : 0;
       score = Math.max(score, rawScore);
       if (it._text.includes(nq) && nq.length >= 3) score += 12;
+      if (aliasHit) score = Math.max(score, 150);
       if (score >= 55) scoredIntents.push({ it, score });
+    }
+
+    // Services that belong to a matched problem guide are the most relevant
+    // answer. Make sure they are present even when the person's wording does
+    // not literally appear in the service text, and lift them above loose
+    // keyword matches from unrelated services.
+    const priorityScore = new Map();
+    for (const x of scoredIntents) {
+      (x.it.serviceIds || []).forEach((id, idx) => {
+        const bonus = Math.max(20, 120 - idx * 30);
+        priorityScore.set(id, Math.max(priorityScore.get(id) || 0, bonus));
+      });
+    }
+    const alreadyScored = new Set(scoredServices.map((x) => x.s.id));
+    for (const [id, bonus] of priorityScore) {
+      if (alreadyScored.has(id)) continue;
+      const s = SERVICE_BY_ID.get(id);
+      if (!s) continue;
+      if (s.scope === 'state' && s.state !== state.state && !queryStates.has(s.state)) continue;
+      scoredServices.push({ s, score: bonus });
+    }
+    for (const x of scoredServices) {
+      x.score += priorityScore.get(x.s.id) || 0;
     }
 
     scoredServices.sort((a, b) => b.score - a.score || (b.s.featured - a.s.featured) || serviceName(a.s).localeCompare(serviceName(b.s)));
     scoredIntents.sort((a, b) => b.score - a.score);
+    // A longer description deserves a few more guided answers to choose from.
+    const intentLimit = qTokens.length >= 3 ? 5 : 3;
     return {
-      intents: scoredIntents.slice(0, 3).map((x) => x.it),
+      intents: scoredIntents.slice(0, intentLimit).map((x) => x.it),
       services: scoredServices.slice(0, 60).map((x) => x.s),
     };
   }
@@ -593,6 +656,7 @@
     let name = 'home';
     let id = null;
     if (seg[0] === 'search') name = 'search';
+    else if (seg[0] === 'problem') { name = 'problem'; id = seg[1]; }
     else if (seg[0] === 'category') { name = 'category'; id = seg[1]; }
     else if (seg[0] === 'service') { name = 'service'; id = seg[1]; }
     else if (['saved', 'settings', 'state', 'about', 'privacy', 'emergency'].includes(seg[0])) name = seg[0];
@@ -920,7 +984,7 @@
   /* ---------------- expose ---------------- */
   window.HS = {
     D, I18N, LANGS, LANG_META, LANG_LIST, SERVICES, INTENTS, CATEGORIES, STATES,
-    SERVICE_BY_ID, CAT_BY_ID, STATE_BY_CODE, APP_VERSION, SUPPORT_PHONE, SUPPORT_DISPLAY,
+    SERVICE_BY_ID, INTENT_BY_ID, CAT_BY_ID, STATE_BY_CODE, APP_VERSION, SUPPORT_PHONE, SUPPORT_DISPLAY,
     state, prefs, t, L, esc, telHref, waHref, supportHref, fmtDate, categoryName, serviceName, servicePurpose,
     scopeText, icon, isFav, addRecent, toast, setLang, setTheme, setStateCode, setScale,
     openSheet, closeSheet, openLanguage, openTheme, navigate, search, servicesForCategory,
