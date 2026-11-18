@@ -388,7 +388,7 @@
    ],
    "steps": [
     "Move near other passengers if you can.",
-    "Call 139 for railway security or medical help; 182 also reaches RPF.",
+    "Call 139 for railway security or medical help",
     "For immediate danger, call 112."
    ]
   },
@@ -996,17 +996,6 @@
     "Call 1033. For injury or immediate danger, call 112 first.",
     "Give the highway number, direction, nearest kilometre stone or toll plaza and your vehicle number.",
     "Stay behind the crash barrier, away from traffic, until help arrives."
-   ]
-  },
-  "national-rpf-security-182": {
-   "name": "Railway Security Helpline 182 (RPF)",
-   "purpose": "Round-the-clock security assistance manned by RPF personnel through Divisional Security Control Rooms — passengers, including women passengers, can report security issues during a railway journey. 139 also covers railway security/medical assistance.",
-   "when": "Theft, harassment, an occupied reserved seat, or any security problem during a train journey.",
-   "steps": [
-    "Move to a safer place near other passengers if you can.",
-    "Call 182 or 139 and give the train number, coach and seat.",
-    "Describe the person or problem clearly.",
-    "For immediate physical danger, call 112."
    ]
   },
   "national-airsewa-grievance": {

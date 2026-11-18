@@ -12,6 +12,16 @@ const APP = resolve(HERE, '..');
 const SRC = resolve(APP, '..', 'india-helpline-main');
 const read = (p) => JSON.parse(readFileSync(p, 'utf8'));
 
+// Official railway guidance says 182 was merged into 139 on 1 April 2021.
+// It must not ship as a separate, universally active helpline.
+const RETIRED_IDS = new Set(['national-rpf-security-182']);
+const VERIFY_MAX_AGE_DAYS = 365;
+const addDays = (iso, days) => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(iso || '')) return null;
+  const d = new Date(`${iso}T00:00:00Z`);
+  return Number.isNaN(d.getTime()) ? null : new Date(d.getTime() + days * 86400000).toISOString().slice(0, 10);
+};
+
 const categoriesFile = read(join(APP, 'data/categories.json'));
 const bnStates = read(join(APP, 'data/states-bn.json'));
 const statesSource = read(join(SRC, 'data/states.json')).jurisdictions;
@@ -47,7 +57,7 @@ let records = [];
 for (const f of recordFiles) {
   records.push(...read(f).filter((r) => r && r.id && !r.coverageNotes));
 }
-records = records.filter((r) => r.status === 'published');
+records = records.filter((r) => r.status === 'published' && !RETIRED_IDS.has(r.id));
 
 const CODE_FIX = { UK: 'UT', CG: 'CT' };
 const NATIONAL_CATEGORY = {
@@ -73,7 +83,6 @@ const NATIONAL_CATEGORY = {
   'national-depwd-14456': 'women_child',
   'national-nalsa-15100': 'government',
   'national-railmadad-139': 'railway',
-  'national-rpf-security-182': 'railway',
   'national-nhai-highway-1033': 'highway',
   'in-lpg-emergency-1906': 'gas',
   'national-cybercrime-1930': 'cyber',
@@ -124,6 +133,7 @@ function normalize(rec) {
     sourceName: rec.operator || '',
     sourceUrl: rec.sourceUrl || '',
     verifiedDate: rec.checkedDate || null,
+    verifiedUntil: addDays(rec.checkedDate, VERIFY_MAX_AGE_DAYS),
     emergency: rec.category === 'emergency' || rec.serviceType === 'dispatch' && rec.category === 'health',
     featured: false,
     keywords: Array.isArray(rec.aliases) ? rec.aliases.slice() : [],
@@ -180,6 +190,7 @@ const services = [...byId.values()].map((s) => {
     emergency: !!s.emergency,
     featured: !!s.featured,
     verifiedDate: s.verifiedDate || null,
+    verifiedUntil: s.verifiedUntil || addDays(s.verifiedDate, VERIFY_MAX_AGE_DAYS),
     officialUrl: s.officialUrl || s.channels?.web || null,
   };
 });

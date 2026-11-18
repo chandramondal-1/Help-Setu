@@ -1,0 +1,278 @@
+{
+  "policyVersion": 1,
+  "maxAgeDays": 365,
+  "note": "Emergency numbers are frozen to this approval ledger. To add or change one, update its entry with a named human reviewer, a current official source and a new expiry date before validation will pass.",
+  "officialHosts": [
+    {
+      "suffix": ".gov.in",
+      "kind": "Indian government"
+    },
+    {
+      "suffix": ".nic.in",
+      "kind": "National Informatics Centre"
+    },
+    {
+      "suffix": ".rbi.org.in",
+      "kind": "Reserve Bank of India"
+    },
+    {
+      "suffix": ".aiims.edu",
+      "kind": "AIIMS"
+    },
+    {
+      "suffix": ".poisoncontrol-cmcvellore.org",
+      "kind": "CMC Vellore Poison Control Centre"
+    },
+    {
+      "suffix": ".ihmcl.co.in",
+      "kind": "IRD/NHAI highway help"
+    },
+    {
+      "suffix": ".irctc.co.in",
+      "kind": "IRCTC"
+    },
+    {
+      "suffix": ".gsdma.org",
+      "kind": "Gujarat State Disaster Management Authority"
+    },
+    {
+      "suffix": ".dhbvn.org.in",
+      "kind": "DHBVN"
+    },
+    {
+      "suffix": ".hpseb.in",
+      "kind": "HPSEBL"
+    },
+    {
+      "suffix": ".iglonline.net",
+      "kind": "Indraprastha Gas"
+    },
+    {
+      "suffix": ".kseb.in",
+      "kind": "Kerala State Electricity Board"
+    },
+    {
+      "suffix": ".pspcl.in",
+      "kind": "Punjab State Power Corporation"
+    },
+    {
+      "suffix": ".uppcl.org",
+      "kind": "UP Power Corporation"
+    }
+  ],
+  "urlCheck": {
+    "timeoutMs": 12000,
+    "concurrency": 8,
+    "maxBytes": 262144,
+    "failStatuses": [
+      404,
+      410
+    ],
+    "reviewStatuses": [
+      401,
+      403,
+      405,
+      429,
+      500,
+      502,
+      503,
+      504
+    ]
+  },
+  "retiredNumbers": [
+    {
+      "number": "182",
+      "reason": "Merged into 139 from 1 April 2021. Not advertised as a separate national helpline until Railways confirms otherwise.",
+      "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1703201",
+      "sourceSnippet": "Helpline no. 182 would also be discontinued from 1.4.21, and merged into 139.",
+      "reviewedOn": "2026-11-18"
+    }
+  ],
+  "approvals": [
+    {
+      "number": "03702222893",
+      "serviceIds": [
+        "nl-ambulance-civil-hospital"
+      ],
+      "sourceUrl": "https://kohima.nic.in/helpline",
+      "sourceSuffixes": [
+        ".nic.in"
+      ],
+      "sourceSnippet": "Ambulance Service: Civil Hospital — 0370 2222893",
+      "approvedBy": "baseline import — existing HelpSetu reviewed catalogue",
+      "approvedOn": "2026-11-18",
+      "expiresOn": "2027-11-18"
+    },
+    {
+      "number": "03852452669",
+      "serviceIds": [
+        "mn-police-control-03852452669"
+      ],
+      "sourceUrl": "https://imphaleast.nic.in/helpline",
+      "sourceSuffixes": [
+        ".nic.in"
+      ],
+      "sourceSnippet": "Police Station – Control Room | 0385-2452669",
+      "approvedBy": "baseline import — existing HelpSetu reviewed catalogue",
+      "approvedOn": "2026-11-18",
+      "expiresOn": "2027-11-18"
+    },
+    {
+      "number": "08322428400",
+      "serviceIds": [
+        "ga-police-control-room-lines"
+      ],
+      "sourceUrl": "https://citizen.goapolice.gov.in/web/guest/state-police-control-room",
+      "sourceSuffixes": [
+        ".gov.in"
+      ],
+      "sourceSnippet": "Office tel. No.0832-2428400/ 2428967 | Control Room Officer Mb. No. 7875756000",
+      "approvedBy": "baseline import — existing HelpSetu reviewed catalogue",
+      "approvedOn": "2026-11-18",
+      "expiresOn": "2027-11-18"
+    },
+    {
+      "number": "100",
+      "serviceIds": [
+        "an-police-100",
+        "ch-police-100",
+        "ct-police-100",
+        "dl-police-control-room-100",
+        "hp-police-100",
+        "hr-police-control-room-100",
+        "jh-police-100",
+        "jk-police-control-room-100",
+        "ml-police-100",
+        "py-police-100",
+        "sk-police-100",
+        "tr-police-100",
+        "wb-police-100"
+      ],
+      "sourceUrl": "https://nicobars.andaman.nic.in/helpline",
+      "sourceSuffixes": [
+        ".gov.in",
+        ".nic.in"
+      ],
+      "sourceSnippet": "POLICE CONTROL ROOM — 100",
+      "approvedBy": "baseline import — existing HelpSetu reviewed catalogue",
+      "approvedOn": "2026-11-18",
+      "expiresOn": "2027-11-18"
+    },
+    {
+      "number": "101",
+      "serviceIds": [
+        "an-fire-101",
+        "br-fire-101",
+        "ch-fire-101",
+        "dl-fire-101",
+        "fire-101-legacy",
+        "hp-fire-101",
+        "hr-fire-101",
+        "jk-fire-101",
+        "ml-fire-101",
+        "mn-fire-101",
+        "mz-fire-101",
+        "up-fire-101"
+      ],
+      "sourceUrl": "https://nicobars.andaman.nic.in/helpline",
+      "sourceSuffixes": [
+        ".gov.in",
+        ".nic.in"
+      ],
+      "sourceSnippet": "FIRE SERVICE — 101",
+      "approvedBy": "baseline import — existing HelpSetu reviewed catalogue",
+      "approvedOn": "2026-11-18",
+      "expiresOn": "2027-11-18"
+    },
+    {
+      "number": "102",
+      "serviceIds": [
+        "dl-ambulance-cats-102",
+        "jk-ambulance-102",
+        "mz-ambulance-102",
+        "national-maternal-102",
+        "od-janani-102",
+        "sk-fire-102",
+        "tr-ambulance-102"
+      ],
+      "sourceUrl": "https://www.pib.gov.in/newsite/erelcontent.aspx?relid=101671",
+      "sourceSuffixes": [
+        ".gov.in",
+        ".nic.in"
+      ],
+      "sourceSnippet": "Dial 102 type ambulance is a patient transport system, primarily to transport pregnant women for institutional delivery and also sick infants (PIB, MoHFW).",
+      "approvedBy": "baseline import — existing HelpSetu reviewed catalogue",
+      "approvedOn": "2026-11-18",
+      "expiresOn": "2027-11-18"
+    },
+    {
+      "number": "103",
+      "serviceIds": [
+        "sk-ambulance-103"
+      ],
+      "sourceUrl": "https://gangtokdistrict.nic.in/helpline",
+      "sourceSuffixes": [
+        ".nic.in"
+      ],
+      "sourceSnippet": "Ambulance : 103",
+      "approvedBy": "baseline import — existing HelpSetu reviewed catalogue",
+      "approvedOn": "2026-11-18",
+      "expiresOn": "2027-11-18"
+    },
+    {
+      "number": "108",
+      "serviceIds": [
+        "ap-108-ambulance",
+        "ga-ambulance-108",
+        "hp-ambulance-102-108",
+        "hr-ambulance-108",
+        "jh-ambulance-108",
+        "ka-108-arogya-kavacha",
+        "mh-ambulance-108",
+        "ml-medical-108",
+        "national-ambulance-108",
+        "od-ambulance-108",
+        "pb-ambulance-108",
+        "ts-accident-help-line-108",
+        "up-ambulance-108"
+      ],
+      "sourceUrl": "https://www.pib.gov.in/newsite/PrintRelease.aspx?relid=176243",
+      "sourceSuffixes": [
+        ".gov.in",
+        ".nic.in"
+      ],
+      "sourceSnippet": "…technical and financial support is provided to States/UTs … including support for ambulance services including Dial-108, Dial-102 … (PIB, MoHFW) with NAS 'currently operational in 36 States and Union Territories across the country' (PIB, Mar 2025).",
+      "approvedBy": "baseline import — existing HelpSetu reviewed catalogue",
+      "approvedOn": "2026-11-18",
+      "expiresOn": "2027-11-18"
+    },
+    {
+      "number": "112",
+      "serviceIds": [
+        "national-erss-112"
+      ],
+      "sourceUrl": "https://112.gov.in/",
+      "sourceSuffixes": [
+        ".gov.in"
+      ],
+      "sourceSnippet": "Emergency Response Support System (ERSS) is a Pan-India single number (112) based emergency response system for citizens in emergencies. … If you require emergency assistance from Police, Fire & Rescue, Health and other services, you may: 1. Dial 112 from your",
+      "approvedBy": "baseline import — existing HelpSetu reviewed catalogue",
+      "approvedOn": "2026-11-18",
+      "expiresOn": "2027-11-18"
+    },
+    {
+      "number": "7005986046",
+      "serviceIds": [
+        "nl-police-control-7005986046"
+      ],
+      "sourceUrl": "https://kohima.nic.in/helpline",
+      "sourceSuffixes": [
+        ".nic.in"
+      ],
+      "sourceSnippet": "Control Room — 7005986046",
+      "approvedBy": "baseline import — existing HelpSetu reviewed catalogue",
+      "approvedOn": "2026-11-18",
+      "expiresOn": "2027-11-18"
+    }
+  ]
+}
