@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -91,6 +92,12 @@ public class MainActivity extends Activity {
             }
         });
         web.setWebChromeClient(new WebChromeClient());
+        web.addJavascriptInterface(new Object() {
+            @JavascriptInterface
+            public void checkUpdate() {
+                checkForWebUpdate();
+            }
+        }, "HelpSetuNative");
 
         loadApp();
         checkForWebUpdate();

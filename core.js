@@ -800,6 +800,11 @@
 
   function checkForUpdates() {
     if (state.isApk) {
+      if (window.HelpSetuNative?.checkUpdate) {
+        toast(t('update.apkTitle'));
+        window.HelpSetuNative.checkUpdate();
+        return;
+      }
       openSheet({
         title: t('update.apkTitle'),
         html: `<p class="sheet-note" style="margin-top:0">${esc(t('update.apkBody'))}</p>
