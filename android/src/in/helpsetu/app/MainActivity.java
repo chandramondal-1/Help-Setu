@@ -42,7 +42,7 @@ import java.util.zip.ZipInputStream;
  */
 public class MainActivity extends Activity {
     private static final String MANIFEST_URL =
-            "https://raw.githubusercontent.com/chandramondal-1/Help-Setu/main/android/update.json";
+            "https://github.com/chandramondal-1/Help-Setu/raw/refs/heads/main/android/update.json";
     /** Version of the web files bundled inside this APK. */
     private static final int BUNDLED_WEB_VERSION = 1;
 
