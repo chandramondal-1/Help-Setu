@@ -1,19 +1,19 @@
 /* HelpSetu service worker — offline-first app shell and verified directory. */
 'use strict';
 
-const VERSION = 'helpsetu-v1.2.3';
+const VERSION = 'helpsetu-v1.2.4';
 const CORE = [
   './',
   'index.html',
-  'styles.css?v=1.2.3',
-  'data.js?v=1.2.3',
-  'i18n.js?v=1.2.3',
-  'i18n-extra.js?v=1.2.3',
-  'data-i18n.js?v=1.2.3',
-  'core.js?v=1.2.3',
-  'views.js?v=1.2.3',
-  'views2.js?v=1.2.3',
-  'manifest.webmanifest?v=1.2.3',
+  'styles.css?v=1.2.4',
+  'data.js?v=1.2.4',
+  'i18n.js?v=1.2.4',
+  'i18n-extra.js?v=1.2.4',
+  'data-i18n.js?v=1.2.4',
+  'core.js?v=1.2.4',
+  'views.js?v=1.2.4',
+  'views2.js?v=1.2.4',
+  'manifest.webmanifest?v=1.2.4',
   'icons/icon.svg',
   'icons/icon-192.png',
   'icons/icon-512.png',
@@ -32,7 +32,9 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((key) => key !== VERSION).map((key) => caches.delete(key))))
+      // Cache storage is shared by every site on this origin. Only clean up
+      // our own versioned caches; never touch another app's caches.
+      .then((keys) => Promise.all(keys.filter((key) => key.startsWith('helpsetu-') && key !== VERSION).map((key) => caches.delete(key))))
       .then(() => self.clients.claim())
   );
 });

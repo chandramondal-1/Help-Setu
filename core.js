@@ -67,7 +67,7 @@
     };
   }
 
-  const APP_VERSION = '1.2.3';
+  const APP_VERSION = '1.2.4';
   const prefs = loadPrefs();
   const state = {
     ...prefs, sheet: null, installEvent: null, speaking: false, query: '',
@@ -102,6 +102,9 @@
     return val[state.lang] || val.en || '';
   };
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  // Canonical public address. The APK loads its files from an internal
+  // https origin, so location.origin there is not shareable — always use this.
+  const CANONICAL_URL = 'https://chandramondal-1.github.io/Help-Setu/';
   const SUPPORT_PHONE = '918371998257';
   const SUPPORT_DISPLAY = '+91 83719 98257';
   const telHref = (num) => 'tel:' + String(num || '').replace(/[^\d+]/g, '');
@@ -698,7 +701,7 @@
   function shareService(id) {
     const s = SERVICE_BY_ID.get(id);
     if (!s) return;
-    const url = `${location.origin}${location.pathname}#/service/${s.id}`;
+    const url = `${CANONICAL_URL}#/service/${s.id}`;
     const text = t('service.shareText', { name: serviceName(s), number: s.number || '' });
     if (navigator.share) {
       navigator.share({ title: 'HelpSetu — ' + serviceName(s), text, url }).catch(() => {});
@@ -881,7 +884,10 @@
       }, 2000);
     }
 
-    if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+    // The APK handles its own updates through the native bridge; a service
+    // worker is unnecessary there and can serve stale content after a silent
+    // web-bundle swap.
+    if ('serviceWorker' in navigator && !state.isApk && /^https?:$/.test(location.protocol)) {
       const wasControlled = !!navigator.serviceWorker.controller;
       navigator.serviceWorker.register('sw.js').then((reg) => {
         state.swReg = reg;

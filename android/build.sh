@@ -12,12 +12,24 @@ JAVA_HOME="${JAVA_HOME:-/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Content
 export JAVA_HOME
 export PATH="$JAVA_HOME/bin:$BT:$PATH"
 
-VERSION="1.2.3"
-CODE=5
+VERSION="1.2.4"
+CODE=6
 BUILD="$ANDROID/build"
 OUT="$ROOT/HelpSetu-$VERSION.apk"
 KS="$ANDROID/keystore/helpsetu.jks"
-STOREPASS="helpsetu123"
+
+# The signing password is a secret: never commit it. Provide it through
+# HELPSETU_STOREPASS in CI, or type it interactively on a terminal.
+if [ -n "${HELPSETU_STOREPASS:-}" ]; then
+  STOREPASS="$HELPSETU_STOREPASS"
+elif [ -t 0 ]; then
+  read -r -s -p "Android keystore password: " STOREPASS
+  echo
+else
+  echo "Set HELPSETU_STOREPASS before building (no terminal available)." >&2
+  exit 1
+fi
+[ -n "$STOREPASS" ] || { echo "Empty keystore password." >&2; exit 1; }
 
 for tool in aapt2 d8 zipalign apksigner; do
   [ -x "$BT/$tool" ] || { echo "Missing $BT/$tool" >&2; exit 1; }

@@ -1,12 +1,12 @@
 {
-  "version": "1.2.3",
-  "versionCode": 5,
-  "apkUrl": "https://github.com/chandramondal-1/Help-Setu/releases/latest/download/HelpSetu-1.2.3.apk",
-  "notes": "HelpSetu 1.2.3 — railway help now uses 139, stronger source verification (official domains, expiry, URL checks, emergency approval ledger), full-screen layout and 25 Indian languages.",
+  "version": "1.2.4",
+  "versionCode": 6,
+  "apkUrl": "https://github.com/chandramondal-1/Help-Setu/releases/latest/download/HelpSetu-1.2.4.apk",
+  "notes": "HelpSetu 1.2.4 — hardened Android WebView with no file access and strict navigation, canonical share links, scoped service-worker cache cleanup, and no embedded signing password. Railway help uses 139 only.",
   "supportWhatsApp": "https://wa.me/918371998257",
   "web": {
-    "version": 9,
+    "version": 10,
     "file": "android/web-bundle.zip",
-    "sha256": "3c227ed2cd9c277866af2ab292c4380ad4845eb1c1a7ec6b6d7992c9a8b99ede"
+    "sha256": "627a5f137845bebcf7ad9859b3ac7de0cfb23f5b4d5cc4cf02c4c07c805086bb"
   }
 }

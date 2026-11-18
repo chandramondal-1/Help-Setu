@@ -13,6 +13,8 @@ import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -20,6 +22,7 @@ import android.widget.Toast;
 
 import org.json.JSONObject;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -29,6 +32,9 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.MessageDigest;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.zip.ZipEntry;
@@ -52,7 +58,35 @@ public class MainActivity extends Activity {
     private static final String RAW_BASE =
             "https://raw.githubusercontent.com/chandramondal-1/Help-Setu/";
     /** Version of the web files bundled inside this APK. */
-    private static final int BUNDLED_WEB_VERSION = 9;
+    private static final int BUNDLED_WEB_VERSION = 10;
+
+    /**
+     * The WebView loads its files from a local https origin instead of file://.
+     * That lets us disable all file and content access, so no page can read
+     * unrelated files even if untrusted content ever reaches the WebView.
+     * This is the reserved host used by WebViewAssetLoader; we serve the files
+     * ourselves so the build stays dependency-free.
+     */
+    private static final String ASSET_HOST = "appassets.androidplatform.net";
+    private static final String APP_ORIGIN = "https://" + ASSET_HOST + "/";
+
+    private static final Map<String, String> MIME = new HashMap<>();
+    static {
+        MIME.put("html", "text/html");
+        MIME.put("css", "text/css");
+        MIME.put("js", "application/javascript");
+        MIME.put("json", "application/json");
+        MIME.put("webmanifest", "application/manifest+json");
+        MIME.put("svg", "image/svg+xml");
+        MIME.put("png", "image/png");
+        MIME.put("jpg", "image/jpeg");
+        MIME.put("jpeg", "image/jpeg");
+        MIME.put("gif", "image/gif");
+        MIME.put("ico", "image/x-icon");
+        MIME.put("woff", "font/woff");
+        MIME.put("woff2", "font/woff2");
+        MIME.put("ttf", "font/ttf");
+    }
 
     private static final ExecutorService UPDATER = Executors.newSingleThreadExecutor();
 
@@ -70,18 +104,47 @@ public class MainActivity extends Activity {
         WebSettings s = web.getSettings();
         s.setJavaScriptEnabled(true);
         s.setDomStorageEnabled(true);
-        s.setAllowFileAccess(true);
-        s.setAllowContentAccess(true);
-        s.setAllowFileAccessFromFileURLs(true);
+        // Serve app files from an intercepted https origin so no file:// or
+        // content:// access is required or permitted.
+        s.setAllowFileAccess(false);
+        s.setAllowContentAccess(false);
+        s.setAllowFileAccessFromFileURLs(false);
+        s.setAllowUniversalAccessFromFileURLs(false);
         s.setUseWideViewPort(true);
         s.setLoadWithOverviewMode(true);
         s.setBuiltInZoomControls(false);
         s.setDisplayZoomControls(false);
-        s.setUserAgentString(s.getUserAgentString() + " HelpSetuAndroid/1.2.3");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            s.setMediaPlaybackRequiresUserGesture(true);
+        }
+        s.setUserAgentString(s.getUserAgentString() + " HelpSetuAndroid/1.2.4");
 
-        web.setWebViewClient(new WebViewClient() {
+        final WebViewClient client = new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return handleExternalUrl(url);
+            }
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                if (request != null && request.isForMainFrame()) {
+                    return handleExternalUrl(request.getUrl().toString());
+                }
+                return false;
+            }
+
+            @Override
+            public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request) {
+                if (request == null) return super.shouldInterceptRequest(view, request);
+                Uri uri = request.getUrl();
+                if (uri == null || !ASSET_HOST.equalsIgnoreCase(uri.getHost())) {
+                    return super.shouldInterceptRequest(view, request);
+                }
+                return serveAsset(uri);
+            }
+
+            private boolean handleExternalUrl(String url) {
+                if (url == null) return true;
                 if (url.startsWith("tel:") || url.startsWith("sms:")) {
                     try {
                         Intent i = new Intent(Intent.ACTION_DIAL, Uri.parse(url));
@@ -89,17 +152,21 @@ public class MainActivity extends Activity {
                     } catch (Exception ignored) { }
                     return true;
                 }
-                if (url.startsWith("http://") || url.startsWith("https://")
-                        || url.startsWith("mailto:")) {
+                if (url.startsWith(APP_ORIGIN) || url.startsWith("about:")) {
+                    return false;
+                }
+                if (url.startsWith("http://") || url.startsWith("https://") || url.startsWith("mailto:")) {
                     try {
                         Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
                         startActivity(i);
                     } catch (Exception ignored) { }
                     return true;
                 }
-                return false;
+                // Block any other scheme (file:, javascript:, content:, etc.).
+                return true;
             }
-        });
+        };
+        web.setWebViewClient(client);
         web.setWebChromeClient(new WebChromeClient());
         web.addJavascriptInterface(new Object() {
             @JavascriptInterface
@@ -149,12 +216,49 @@ public class MainActivity extends Activity {
         return webRoot;
     }
 
+    /** Load the app from the local https origin; serveAsset() picks the newest copy. */
     private void loadApp() {
-        File index = new File(webRoot(), "index.html");
-        String url = index.exists()
-                ? index.toURI().toString()
-                : "file:///android_asset/index.html";
-        web.loadUrl(url);
+        web.loadUrl(APP_ORIGIN + "index.html");
+    }
+
+    /**
+     * Serve a file under the local app origin. A downloaded webroot takes
+     * precedence over the bundled assets; nothing outside those two roots is
+     * ever readable. Path traversal segments are rejected.
+     */
+    private WebResourceResponse serveAsset(Uri uri) {
+        String path = uri.getPath();
+        if (path == null || path.isEmpty() || "/".equals(path)) path = "/index.html";
+        String rel = path;
+        while (rel.startsWith("/")) rel = rel.substring(1);
+        rel = rel.replace('\\', '/');
+        // Reject traversal explicitly rather than silently normalising it.
+        if (rel.isEmpty() || rel.contains("..")) return notFound();
+
+        InputStream in = null;
+        File local = new File(webRoot(), rel);
+        try {
+            if (local.isFile()) in = new FileInputStream(local);
+        } catch (IOException ignored) { }
+        if (in == null) {
+            try {
+                in = getAssets().open(rel);
+            } catch (IOException ignored) { }
+        }
+        if (in == null) return notFound();
+
+        int dot = rel.lastIndexOf('.');
+        String ext = dot >= 0 ? rel.substring(dot + 1).toLowerCase() : "";
+        String mime = MIME.containsKey(ext) ? MIME.get(ext) : "application/octet-stream";
+        String encoding = mime.startsWith("text/") || mime.endsWith("javascript")
+                || mime.endsWith("json") || mime.endsWith("xml")
+                ? "UTF-8" : null;
+        return new WebResourceResponse(mime, encoding, in);
+    }
+
+    private static WebResourceResponse notFound() {
+        return new WebResourceResponse("text/plain", "UTF-8", 404, "Not Found",
+                Collections.<String, String>emptyMap(), new ByteArrayInputStream(new byte[0]));
     }
 
     /** Quietly install a newer web bundle. Never blocks the UI or breaks offline use. */
@@ -213,7 +317,7 @@ public class MainActivity extends Activity {
         HttpURLConnection c = (HttpURLConnection) new URL(urlString).openConnection();
         c.setConnectTimeout(8000);
         c.setReadTimeout(15000);
-        c.setRequestProperty("User-Agent", "HelpSetuAndroid/1.2.3");
+        c.setRequestProperty("User-Agent", "HelpSetuAndroid/1.2.4");
         c.setRequestProperty("Accept", "application/vnd.github+json");
         try {
             if (c.getResponseCode() != HttpURLConnection.HTTP_OK) {
@@ -235,7 +339,7 @@ public class MainActivity extends Activity {
         HttpURLConnection c = (HttpURLConnection) new URL(urlString).openConnection();
         c.setConnectTimeout(8000);
         c.setReadTimeout(30000);
-        c.setRequestProperty("User-Agent", "HelpSetuAndroid/1.2.3");
+        c.setRequestProperty("User-Agent", "HelpSetuAndroid/1.2.4");
         try {
             if (c.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 throw new IOException("HTTP " + c.getResponseCode());
