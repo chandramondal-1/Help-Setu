@@ -19,7 +19,10 @@ function setPath(obj, keys, value) {
   for (let i = 0; i < keys.length; i++) {
     const k = keys[i];
     if (i === keys.length - 1) { cur[k] = value; return; }
-    if (!cur[k] || typeof cur[k] !== 'object') cur[k] = {};
+    // Flattened UI arrays look like "home.chips.0" — rebuild them as real
+    // arrays so views can call .map() on t('home.chips').
+    const nextIsIndex = /^\d+$/.test(keys[i + 1] || '');
+    if (!cur[k] || typeof cur[k] !== 'object') cur[k] = nextIsIndex ? [] : {};
     cur = cur[k];
   }
 }
