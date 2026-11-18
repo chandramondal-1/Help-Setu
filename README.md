@@ -90,7 +90,7 @@ sw.js                   Offline app-shell cache (v1.1.0)
 manifest.webmanifest    PWA metadata and shortcuts
 icons/                  SVG and generated PNG icons
 data/                   Curated source catalogue and cached translations
-android/                WebView wrapper, launcher icons, build.sh and update.json
+android/                WebView wrapper, launcher icons, build.sh, update.json and web-bundle.zip
 HelpSetu-1.1.0.apk      Signed, installable APK
 tools/build-data.mjs    Merges curated data with verified source records → data.js
 tools/validate.mjs      Checks ids, numbers, sources, dates, links and translations
@@ -126,7 +126,8 @@ HelpSetu is **not** a government app and is not affiliated with the Government o
 ## Updates and support
 
 - **Web / PWA:** the app checks for a new service-worker version when it opens and when you return to it. An update bar offers **Update now**, and Settings → **Check for updates** forces a check.
-- **APK:** Settings → **Check for updates** explains how to install a newer APK and links to the developer's WhatsApp. `android/update.json` records the current version and release URL.
+- **APK — silent content updates:** on every launch the app quietly reads `android/update.json` from GitHub. If `web.version` is newer, it downloads `android/web-bundle.zip`, verifies its SHA-256, swaps it in and reloads — **no reinstall needed**. All fixes to the interface, catalogue, languages and guidance are delivered this way. Offline or a failed check simply keeps the current copy; the bundled copy in the APK is the fallback.
+- **APK binary:** Android does not allow a normal app to replace its own APK silently. Changes to the native WebView wrapper itself (permissions, calling behaviour, updater code) still require installing a new APK. The Play Store's In-App Update API can do this only if the app is published there. `android/update.json` also records the APK download URL and the developer's WhatsApp.
 - **Developer support:** **+91 83719 98257** — <https://wa.me/918371998257>. Use it for installation help, corrections and translation feedback (the language sheet has a direct report link).
 
 There is **no login**: both the PWA and the APK open straight to the home screen. Preferences (language, theme, text size, saved services) stay on the device.

@@ -36,6 +36,25 @@ cp "$ROOT"/icons/* "$BUILD/assets/icons/"
 # file:// WebView loads are more reliable without cache-busting query strings.
 perl -pi -e 's/\?v=[0-9.]+//g' "$BUILD/assets/index.html"
 
+# --- publishable web bundle for silent in-app updates ---
+rm -f "$ANDROID/web-bundle.zip"
+(cd "$BUILD/assets" && zip -q -r "$ANDROID/web-bundle.zip" .)
+HASH="$(shasum -a 256 "$ANDROID/web-bundle.zip" | awk '{print $1}')"
+python3 - "$ANDROID/update.json" "$HASH" <<'PY'
+import json, sys
+path, digest = sys.argv[1], sys.argv[2]
+with open(path, encoding='utf-8') as f:
+    data = json.load(f)
+web = data.setdefault('web', {})
+web['version'] = int(web.get('version', 1)) + 1
+web['url'] = 'https://raw.githubusercontent.com/chandramondal-1/Help-Setu/main/android/web-bundle.zip'
+web['sha256'] = digest
+with open(path, 'w', encoding='utf-8') as f:
+    json.dump(data, f, ensure_ascii=False, indent=2)
+    f.write('\n')
+print('web bundle version:', web['version'])
+PY
+
 # --- resources + manifest ---
 "$BT/aapt2" compile --dir "$ANDROID/res" -o "$BUILD/res.zip"
 "$BT/aapt2" link \
