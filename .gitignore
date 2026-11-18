@@ -2,7 +2,7 @@
 android/build/
 android/keystore/
 *.apk
-!HelpSetu-1.2.0.apk
+!HelpSetu-1.2.1.apk
 *.idsig
 *.jks
 *.keystore

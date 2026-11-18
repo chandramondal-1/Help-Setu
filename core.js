@@ -67,7 +67,7 @@
     };
   }
 
-  const APP_VERSION = '1.2.0';
+  const APP_VERSION = '1.2.1';
   const prefs = loadPrefs();
   const state = {
     ...prefs, sheet: null, installEvent: null, speaking: false, query: '',
@@ -868,6 +868,18 @@
 
     onlineState(true);
     render();
+
+    // Brief first-load splash. The app is already rendered underneath, so
+    // there is no extra waiting once the 2 seconds are over.
+    const splash = $('#splash');
+    if (splash) {
+      const splashTag = $('#splash-tag');
+      if (splashTag) splashTag.textContent = t('brandTag');
+      setTimeout(() => {
+        splash.classList.add('hide');
+        setTimeout(() => splash.remove(), 400);
+      }, 2000);
+    }
 
     if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
       const wasControlled = !!navigator.serviceWorker.controller;

@@ -12,16 +12,24 @@
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="HelpSetu">
-  <link rel="stylesheet" href="styles.css?v=1.2.0">
-  <script src="data.js?v=1.2.0" defer></script>
-  <script src="i18n.js?v=1.2.0" defer></script>
-  <script src="i18n-extra.js?v=1.2.0" defer></script>
-  <script src="data-i18n.js?v=1.2.0" defer></script>
-  <script src="core.js?v=1.2.0" defer></script>
-  <script src="views.js?v=1.2.0" defer></script>
-  <script src="views2.js?v=1.2.0" defer></script>
+  <link rel="stylesheet" href="styles.css?v=1.2.1">
+  <script src="data.js?v=1.2.1" defer></script>
+  <script src="i18n.js?v=1.2.1" defer></script>
+  <script src="i18n-extra.js?v=1.2.1" defer></script>
+  <script src="data-i18n.js?v=1.2.1" defer></script>
+  <script src="core.js?v=1.2.1" defer></script>
+  <script src="views.js?v=1.2.1" defer></script>
+  <script src="views2.js?v=1.2.1" defer></script>
 </head>
 <body>
+  <div class="splash" id="splash" role="status" aria-live="polite">
+    <div class="splash-inner">
+      <img src="icons/icon.svg" alt="" class="splash-mark">
+      <div class="splash-name">HelpSetu</div>
+      <div class="splash-tag" id="splash-tag">India's services directory</div>
+      <div class="splash-spinner" aria-hidden="true"></div>
+    </div>
+  </div>
   <a class="skip-link" href="#main">Skip to content</a>
   <div id="app">
     <div class="offline-bar" id="offline-bar" role="status" hidden>
