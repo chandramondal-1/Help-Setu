@@ -1,0 +1,239 @@
+[
+  {
+    "id": "umang-portal",
+    "category": "government",
+    "scope": "national",
+    "name": {
+      "en": "UMANG — government services in one app",
+      "hi": "UMANG — एक ऐप में सरकारी सेवाएँ",
+      "bn": "UMANG — এক অ্যাপে সরকারি পরিষেবা"
+    },
+    "purpose": {
+      "en": "Official Government of India app and website for many central and state services: EPFO, gas booking, Ayushman, pensions, land records and more.",
+      "hi": "कई केंद्रीय और राज्य सेवाओं के लिए भारत सरकार का आधिकारिक ऐप और वेबसाइट: EPFO, गैस बुकिंग, आयुष्मान, पेंशन, भूमि रिकॉर्ड और अन्य।",
+      "bn": "অনেক কেন্দ্রীয় ও রাজ্য পরিষেবার জন্য ভারত সরকারের সরকারি অ্যাপ ও ওয়েবসাইট: EPFO, গ্যাস বুকিং, আয়ুষ্মান, পেনশন, জমির নথি ইত্যাদি।"
+    },
+    "when": {
+      "en": "You need a government service but do not know which department or website to use.",
+      "hi": "आपको सरकारी सेवा चाहिए लेकिन नहीं पता कि कौन-सा विभाग या वेबसाइट इस्तेमाल करें।",
+      "bn": "সরকারি পরিষেবা দরকার কিন্তু কোন বিভাগ বা ওয়েবসাইট ব্যবহার করবেন জানেন না।"
+    },
+    "steps": {
+      "en": [
+        "Open UMANG or install it from your app store.",
+        "Sign in with your mobile number.",
+        "Search for the service by name.",
+        "Use only the official UMANG app or web.umang.gov.in."
+      ],
+      "hi": [
+        "UMANG खोलें या अपने ऐप स्टोर से इंस्टॉल करें।",
+        "अपने मोबाइल नंबर से साइन इन करें।",
+        "सेवा का नाम खोजें।",
+        "सिर्फ़ आधिकारिक UMANG ऐप या web.umang.gov.in इस्तेमाल करें।"
+      ],
+      "bn": [
+        "UMANG খুলুন বা আপনার অ্যাপ স্টোর থেকে ইনস্টল করুন।",
+        "আপনার মোবাইল নম্বর দিয়ে সাইন ইন করুন।",
+        "পরিষেবার নাম খুঁজুন।",
+        "শুধু সরকারি UMANG অ্যাপ বা web.umang.gov.in ব্যবহার করুন।"
+      ]
+    },
+    "number": null,
+    "officialUrl": "https://web.umang.gov.in/",
+    "sourceName": "Ministry of Electronics and Information Technology (MeitY)",
+    "sourceUrl": "https://web.umang.gov.in/",
+    "verifiedDate": "2026-11-18",
+    "emergency": false,
+    "featured": true,
+    "keywords": ["umang", "government", "sarkari", "epfo", "pf", "pension", "gas booking", "ayushman", "land record", "सरकारी", "सरकार", "ईपीएफओ", "पेंशन", "সরকারি", "সরকার", "পেনশন"]
+  },
+  {
+    "id": "digilocker-portal",
+    "category": "government",
+    "scope": "national",
+    "name": {
+      "en": "DigiLocker — digital documents",
+      "hi": "डिजिलॉकर — डिजिटल दस्तावेज़",
+      "bn": "ডিজিলকার — ডিজিটাল নথি"
+    },
+    "purpose": {
+      "en": "Official digital wallet for Aadhaar, driving licence, PAN, marksheets, vehicle RC and other documents issued by government.",
+      "hi": "आधार, ड्राइविंग लाइसेंस, PAN, मार्कशीट, वाहन RC और सरकारी दस्तावेज़ों का आधिकारिक डिजिटल बैग।",
+      "bn": "আধার, ড্রাইভিং লাইসেন্স, PAN, মার্কশিট, গাড়ির RC ও অন্যান্য সরকারি নথির সরকারি ডিজিটাল ওয়ালেট।"
+    },
+    "when": {
+      "en": "You need to show or download a government document, or keep a backup before travelling.",
+      "hi": "सरकारी दस्तावेज़ दिखाना या डाउनलोड करना है, या यात्रा से पहले बैकअप रखना है।",
+      "bn": "সরকারি নথি দেখাতে বা ডাউনলোড করতে হবে, বা যাত্রার আগে ব্যাকআপ রাখতে হবে।"
+    },
+    "steps": {
+      "en": [
+        "Open digilocker.gov.in or install the official DigiLocker app.",
+        "Sign in with your Aadhaar-linked mobile number.",
+        "Choose the document you need and download or share it.",
+        "Do not share your Aadhaar OTP with anyone."
+      ],
+      "hi": [
+        "digilocker.gov.in खोलें या आधिकारिक DigiLocker ऐप इंस्टॉल करें।",
+        "आधार से जुड़े मोबाइल नंबर से साइन इन करें।",
+        "ज़रूरी दस्तावेज़ चुनें और डाउनलोड या साझा करें।",
+        "अपना आधार OTP किसी से साझा न करें।"
+      ],
+      "bn": [
+        "digilocker.gov.in খুলুন বা সরকারি DigiLocker অ্যাপ ইনস্টল করুন।",
+        "আধার-সংযুক্ত মোবাইল নম্বর দিয়ে সাইন ইন করুন।",
+        "প্রয়োজনীয় নথি বেছে ডাউনলোড বা শেয়ার করুন।",
+        "আপনার আধার OTP কারও সঙ্গে শেয়ার করবেন না।"
+      ]
+    },
+    "number": null,
+    "officialUrl": "https://www.digilocker.gov.in/",
+    "sourceName": "Ministry of Electronics and Information Technology (MeitY)",
+    "sourceUrl": "https://www.digilocker.gov.in/",
+    "verifiedDate": "2026-11-18",
+    "emergency": false,
+    "featured": false,
+    "keywords": ["digilocker", "documents", "aadhaar", "driving licence", "rc", "pan", "marksheet", "दस्तावेज़", "आधार", "लाइसेंस", "নথি", "আধার", "লাইসেন্স"]
+  },
+  {
+    "id": "passport-seva-portal",
+    "category": "government",
+    "scope": "national",
+    "name": {
+      "en": "Passport Seva",
+      "hi": "पासपोर्ट सेवा",
+      "bn": "পাসপোর্ট সেবা"
+    },
+    "purpose": {
+      "en": "Official Ministry of External Affairs portal to apply for a new passport, renew one, book an appointment and track status.",
+      "hi": "नया पासपोर्ट, नवीनीकरण, अपॉइंटमेंट और स्थिति जानने के लिए विदेश मंत्रालय का आधिकारिक पोर्टल।",
+      "bn": "নতুন পাসপোর্ট, নবীকরণ, অ্যাপয়েন্টমেন্ট এবং অবস্থা দেখার জন্য বিদেশ মন্ত্রকের সরকারি পোর্টাল।"
+    },
+    "when": {
+      "en": "You need a passport application, renewal, police clearance or appointment.",
+      "hi": "पासपोर्ट आवेदन, नवीनीकरण, पुलिस क्लीयरेंस या अपॉइंटमेंट चाहिए।",
+      "bn": "পাসপোর্টের আবেদন, নবীকরণ, পুলিশ ক্লিয়ারেন্স বা অ্যাপয়েন্টমেন্ট দরকার।"
+    },
+    "steps": {
+      "en": [
+        "Register on the official Passport Seva website.",
+        "Fill the form and pay the fee online.",
+        "Book a slot at your nearest Passport Seva Kendra.",
+        "Carry original documents and photocopies to the appointment."
+      ],
+      "hi": [
+        "आधिकारिक पासपोर्ट सेवा वेबसाइट पर रजिस्टर करें।",
+        "फ़ॉर्म भरें और ऑनलाइन शुल्क दें।",
+        "नज़दीकी पासपोर्ट सेवा केंद्र में स्लॉट बुक करें।",
+        "अपॉइंटमेंट पर मूल दस्तावेज़ और फोटोकॉपी ले जाएँ।"
+      ],
+      "bn": [
+        "সরকারি পাসপোর্ট সেবা ওয়েবসাইটে রেজিস্টার করুন।",
+        "ফর্ম পূরণ করে অনলাইনে ফি দিন।",
+        "নিকটবর্তী পাসপোর্ট সেবা কেন্দ্রে স্লট বুক করুন।",
+        "অ্যাপয়েন্টমেন্টে মূল নথি ও ফটোকপি নিয়ে যান।"
+      ]
+    },
+    "number": null,
+    "officialUrl": "https://www.passportindia.gov.in/",
+    "sourceName": "Ministry of External Affairs, Government of India",
+    "sourceUrl": "https://www.passportindia.gov.in/",
+    "verifiedDate": "2026-11-18",
+    "emergency": false,
+    "featured": false,
+    "keywords": ["passport", "passport seva", "visa", "appointment", "renew", "पासपोर्ट", "वीज़ा", "पासপোর্ট", "ভিসা"]
+  },
+  {
+    "id": "india-gov-portal",
+    "category": "government",
+    "scope": "national",
+    "name": {
+      "en": "National Portal of India — directory",
+      "hi": "भारत का राष्ट्रीय पोर्टल — निर्देशिका",
+      "bn": "ভারতের জাতীয় পোর্টাল — ডিরেক্টরি"
+    },
+    "purpose": {
+      "en": "Official starting point for central and state government websites, schemes, forms and helpline directories.",
+      "hi": "केंद्र और राज्य सरकार की वेबसाइट, योजनाएँ, फ़ॉर्म और हेल्पलाइन निर्देशिका के लिए आधिकारिक शुरुआती जगह।",
+      "bn": "কেন্দ্র ও রাজ্য সরকারের ওয়েবসাইট, প্রকল্প, ফর্ম ও হেল্পলাইন ডিরেক্টরির সরকারি সূচনা স্থান।"
+    },
+    "when": {
+      "en": "You cannot find the right government department or helpline.",
+      "hi": "सही सरकारी विभाग या हेल्पलाइन नहीं मिल रही।",
+      "bn": "সঠিক সরকারি বিভাগ বা হেল্পলাইন খুঁজে পাচ্ছেন না।"
+    },
+    "steps": {
+      "en": [
+        "Open india.gov.in.",
+        "Use the search box or the Services menu.",
+        "Check the official department website address before paying any fee."
+      ],
+      "hi": [
+        "india.gov.in खोलें।",
+        "सर्च बॉक्स या Services मेनू इस्तेमाल करें।",
+        "कोई शुल्क देने से पहले विभाग की आधिकारिक वेबसाइट जाँचें।"
+      ],
+      "bn": [
+        "india.gov.in খুলুন।",
+        "সার্চ বক্স বা Services মেনু ব্যবহার করুন।",
+        "কোনও ফি দেওয়ার আগে বিভাগের সরকারি ওয়েবসাইট যাচাই করুন।"
+      ]
+    },
+    "number": null,
+    "officialUrl": "https://www.india.gov.in/",
+    "sourceName": "National Informatics Centre, Government of India",
+    "sourceUrl": "https://www.india.gov.in/",
+    "verifiedDate": "2026-11-18",
+    "emergency": false,
+    "featured": false,
+    "keywords": ["government directory", "india.gov", "helpline directory", "schemes", "forms", "सरकारी वेबसाइट", "योजना", "সরকারি ওয়েবসাইট", "প্রকল্প"]
+  },
+  {
+    "id": "rbi-cms-portal",
+    "category": "banking",
+    "scope": "national",
+    "name": {
+      "en": "RBI complaint portal — banking problems",
+      "hi": "RBI शिकायत पोर्टल — बैंकिंग समस्या",
+      "bn": "RBI অভিযোগ পোর্টাল — ব্যাংকিং সমস্যা"
+    },
+    "purpose": {
+      "en": "Official Reserve Bank of India portal to complain if your bank or payment operator does not solve a problem in 30 days.",
+      "hi": "अगर बैंक या पेमेंट ऑपरेटर 30 दिन में समस्या नहीं सुलझाता तो शिकायत के लिए भारतीय रिज़र्व बैंक का आधिकारिक पोर्टल।",
+      "bn": "ব্যাংক বা পেমেন্ট অপারেটর ৩০ দিনে সমস্যা না মেটালে অভিযোগের জন্য ভারতীয় রিজার্ভ ব্যাংকের সরকারি পোর্টাল।"
+    },
+    "when": {
+      "en": "Wrong charges, failed ATM withdrawal, unauthorised transaction, or a bank complaint ignored for 30 days.",
+      "hi": "गलत शुल्क, ATM से पैसे नहीं निकले, अनधिकृत लेन-देन, या 30 दिन तक बैंक शिकायत न सुने।",
+      "bn": "ভুল চার্জ, ATM থেকে টাকা না বেরোনো, অননুমোদিত লেনদেন, বা ৩০ দিন ব্যাংকের অভিযোগ উপেক্ষিত।"
+    },
+    "steps": {
+      "en": [
+        "First complain to your bank and keep the complaint number.",
+        "Wait 30 days for the bank to reply.",
+        "If not resolved, open the RBI Complaint Management System.",
+        "For money lost in online fraud, call 1930 immediately as well."
+      ],
+      "hi": [
+        "पहले अपने बैंक में शिकायत करें और शिकायत नंबर रखें।",
+        "बैंक के जवाब के लिए 30 दिन रुकें।",
+        "समाधान न मिले तो RBI Complaint Management System खोलें।",
+        "ऑनलाइन धोखाधड़ी में पैसे गए हों तो तुरंत 1930 पर भी कॉल करें।"
+      ],
+      "bn": [
+        "প্রথমে আপনার ব্যাংকে অভিযোগ করুন এবং অভিযোগ নম্বর রাখুন।",
+        "ব্যাংকের উত্তরের জন্য ৩০ দিন অপেক্ষা করুন।",
+        "সমাধান না হলে RBI Complaint Management System খুলুন।",
+        "অনলাইন প্রতারণায় টাকা গেলে সঙ্গে সঙ্গে ১৯৩০-এ ফোন করুন।"
+      ]
+    },
+    "number": null,
+    "officialUrl": "https://cms.rbi.org.in/",
+    "sourceName": "Reserve Bank of India",
+    "sourceUrl": "https://cms.rbi.org.in/",
+    "verifiedDate": "2026-11-18",
+    "emergency": false,
+    "featured": false,
+    "keywords": ["bank", "banking", "rbi", "ombudsman", "atm", "unauthorised transaction", "failed transaction", "बैंक", "आरबीआई", "एटीएम", "ব্যাংক", "আরবিআই", "এটিএম"]
+  }
+]

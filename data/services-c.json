@@ -1,0 +1,54 @@
+[
+  {
+    "id": "fire-101-legacy",
+    "category": "emergency",
+    "scope": "national",
+    "name": {
+      "en": "Fire — old number 101",
+      "hi": "आग — पुराना नंबर 101",
+      "bn": "আগুন — পুরনো নম্বর ১০১"
+    },
+    "purpose": {
+      "en": "In many states 101 still reaches the fire service. 112 is the nationwide number that works everywhere for fire, police and medical emergencies.",
+      "hi": "कई राज्यों में 101 अब भी दमकल से जुड़ता है। आग, पुलिस और चिकित्सा आपात स्थिति के लिए 112 हर जगह काम करने वाला राष्ट्रीय नंबर है।",
+      "bn": "অনেক রাজ্যে ১০১ এখনও দমকল বিভাগে লাগে। আগুন, পুলিশ ও চিকিৎসার জরুরি অবস্থায় ১১২ সর্বত্র কাজ করে।"
+    },
+    "when": {
+      "en": "There is a fire, smoke, or someone is trapped. If you are not sure, call 112.",
+      "hi": "आग लगी है, धुआँ है, या कोई फँसा है। पक्का न हो तो 112 पर कॉल करें।",
+      "bn": "আগুন লেগেছে, ধোঁয়া আছে, বা কেউ আটকে আছে। নিশ্চিত না হলে ১১২-তে ফোন করুন।"
+    },
+    "steps": {
+      "en": [
+        "Move people away from the fire first. Do not go back inside.",
+        "Call 112. Say the full address, floor, landmark and whether anyone is trapped.",
+        "If a small fire is safe to smother, use a fire extinguisher or a thick blanket. Never use water on an electrical or oil fire.",
+        "Stay on the line and keep your phone reachable for the fire team."
+      ],
+      "hi": [
+        "पहले लोगों को आग से दूर ले जाएँ। अंदर वापस न जाएँ।",
+        "112 पर कॉल करें। पूरा पता, मंज़िल, पहचान की जगह और किसी के फँसे होने की जानकारी दें।",
+        "छोटी आग बुझाना सुरक्षित हो तो अग्निशामक या मोटी चादर इस्तेमाल करें। बिजली या तेल की आग पर पानी कभी न डालें।",
+        "लाइन पर रहें और दमकल टीम के लिए फोन पास रखें।"
+      ],
+      "bn": [
+        "প্রথমে মানুষকে আগুন থেকে দূরে সরান। ভিতরে ফিরে যাবেন না।",
+        "১১২-তে ফোন করুন। পুরো ঠিকানা, তলা, পরিচিত স্থান এবং কেউ আটকে আছে কি না বলুন।",
+        "ছোট আগুন নেভানো নিরাপদ হলে অগ্নিনির্বাপক বা মোটা কম্বল ব্যবহার করুন। বিদ্যুৎ বা তেলের আগুনে জল দেবেন না।",
+        "লাইনে থাকুন এবং দমকলের জন্য ফোন কাছে রাখুন।"
+      ]
+    },
+    "number": "101",
+    "dial": "101",
+    "hours": { "en": "24x7 where available", "hi": "जहाँ उपलब्ध हो, 24x7", "bn": "যেখানে আছে, ২৪x৭" },
+    "availability": { "en": "State fire services; 112 works nationwide", "hi": "राज्य दमकल सेवा; 112 पूरे देश में", "bn": "রাজ্য দমকল; ১১২ সারা দেশে" },
+    "officialUrl": "https://112.gov.in/",
+    "sourceName": "Emergency Response Support System (112.gov.in)",
+    "sourceUrl": "https://112.gov.in/",
+    "verifiedDate": "2026-11-18",
+    "emergency": true,
+    "featured": false,
+    "keywords": ["fire", "aag", "agni", "burning", "smoke", "fire brigade", "आग", "दमकल", "धुआं", "আগুন", "দমকল", "ধোঁয়া"],
+    "channels": {}
+  }
+]

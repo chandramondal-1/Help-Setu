@@ -1,0 +1,349 @@
+[
+  {
+    "id": "consumer-1915",
+    "category": "consumer",
+    "scope": "national",
+    "name": {
+      "en": "National Consumer Helpline — 1915",
+      "hi": "राष्ट्रीय उपभोक्ता हेल्पलाइन — 1915",
+      "bn": "জাতীয় ভোক্তা হেল্পলাইন — ১৯১৫"
+    },
+    "purpose": {
+      "en": "Free help with problems about shops, online orders, refunds, faulty products and services. Call, WhatsApp or register a complaint online.",
+      "hi": "दुकान, ऑनलाइन ऑर्डर, रिफंड, खराब सामान या सेवा की शिकायत के लिए मुफ़्त सहायता। कॉल करें, WhatsApp भेजें या ऑनलाइन शिकायत दर्ज करें।",
+      "bn": "দোকান, অনলাইন অর্ডার, রিফান্ড, নষ্ট পণ্য বা পরিষেবার অভিযোগে বিনামূল্যে সাহায্য। ফোন করুন, হোয়াটসঅ্যাপ করুন বা অনলাইনে অভিযোগ দিন।"
+    },
+    "when": {
+      "en": "The seller is not responding, a refund is refused, you got a wrong or damaged item, or you were overcharged.",
+      "hi": "दुकानदार जवाब नहीं दे रहा, रिफंड नहीं मिल रहा, गलत या टूटा सामान आया, या ज़्यादा पैसे लिए गए।",
+      "bn": "বিক্রেতা সাড়া দিচ্ছেন না, রিফান্ড পাচ্ছেন না, ভুল বা নষ্ট পণ্য এসেছে, বা বেশি টাকা নেওয়া হয়েছে।"
+    },
+    "steps": {
+      "en": [
+        "Keep the bill, order number, payment proof and chat screenshots ready.",
+        "Call 1915 or send a WhatsApp message to +91 88000 01915.",
+        "Write down your complaint number and use it to track the complaint.",
+        "If it is still not solved, file the complaint on the consumer helpline website."
+      ],
+      "hi": [
+        "बिल, ऑर्डर नंबर, भुगतान का सबूत और चैट के स्क्रीनशॉट तैयार रखें।",
+        "1915 पर कॉल करें या +91 88000 01915 पर WhatsApp संदेश भेजें।",
+        "अपना शिकायत नंबर लिख लें और उससे शिकायत ट्रैक करें।",
+        "फिर भी समाधान न हो तो उपभोक्ता हेल्पलाइन की वेबसाइट पर शिकायत दर्ज करें।"
+      ],
+      "bn": [
+        "বিল, অর্ডার নম্বর, পেমেন্টের প্রমাণ এবং চ্যাটের স্ক্রিনশট হাতে রাখুন।",
+        "১৯১৫-এ ফোন করুন বা +91 88000 01915-এ হোয়াটসঅ্যাপ করুন।",
+        "অভিযোগ নম্বর লিখে রাখুন এবং সেটি দিয়ে অভিযোগের অবস্থা দেখুন।",
+        "তবু সমাধান না হলে ভোক্তা হেল্পলাইনের ওয়েবসাইটে অভিযোগ দিন।"
+      ]
+    },
+    "number": "1915",
+    "dial": "1915",
+    "altNumbers": ["1800-11-4000"],
+    "hours": { "en": "8:00 AM – 8:00 PM, toll-free", "hi": "सुबह 8 – रात 8 बजे, टोल-फ्री", "bn": "সকাল ৮টা – রাত ৮টা, টোল-ফ্রি" },
+    "availability": { "en": "All India", "hi": "पूरे भारत में", "bn": "সারা ভারতে" },
+    "officialUrl": "https://consumerhelpline.gov.in/",
+    "sourceName": "Department of Consumer Affairs, Government of India",
+    "sourceUrl": "https://consumerhelpline.gov.in/",
+    "verifiedDate": "2026-11-18",
+    "emergency": false,
+    "featured": true,
+    "keywords": ["consumer", "complaint", "refund", "online order", "flipkart", "amazon", "myntra", "shop", "dukan", "dokandar", "upbhokta", "shikayat", "paisa wapas", "বাজার", "দোকান", "অভিযোগ", "রিফান্ড", "টাকা ফেরত", "उपभोक्ता", "शिकायत", "रिफंड", "दुकानदार", "पैसे वापस"],
+    "channels": { "whatsapp": "+918800001915" }
+  },
+  {
+    "id": "rail-madad-portal",
+    "category": "railway",
+    "scope": "national",
+    "name": {
+      "en": "RailMadad — railway complaint portal",
+      "hi": "रेलमदद — रेल शिकायत पोर्टल",
+      "bn": "রেলমদদ — রেলের অভিযোগ পোর্টাল"
+    },
+    "purpose": {
+      "en": "File a train or station complaint online with photos, and track the reply. Run by Indian Railways.",
+      "hi": "फोटो के साथ ट्रेन या स्टेशन की शिकायत ऑनलाइन दर्ज करें और जवाब ट्रैक करें। भारतीय रेल द्वारा संचालित।",
+      "bn": "ছবিসহ ট্রেন বা স্টেশনের অভিযোগ অনলাইনে দিন এবং উত্তর ট্র্যাক করুন। ভারতীয় রেল পরিচালিত।"
+    },
+    "when": {
+      "en": "Dirty toilet or coach, no water, AC or fan not working, bed bugs, staff behaviour, dirty station, or lost belongings.",
+      "hi": "गंदा टॉयलेट या डिब्बा, पानी नहीं, AC या पंखा खराब, खटमल, कर्मचारी का व्यवहार, गंदा स्टेशन या सामान खो जाना।",
+      "bn": "নোংরা শৌচালয় বা কামরা, জল নেই, এসি বা ফ্যান খারাপ, ছারপোকা, কর্মীর ব্যবহার, নোংরা স্টেশন বা জিনিস হারানো।"
+    },
+    "steps": {
+      "en": [
+        "Note your PNR, train number, coach and berth or seat number.",
+        "Take a photo if it is safe to do so.",
+        "Open RailMadad and choose Train Complaint or Station Complaint.",
+        "Enter your journey details, describe the problem and attach the photo.",
+        "Save the complaint number and track the reply on the website."
+      ],
+      "hi": [
+        "अपना PNR, ट्रेन नंबर, कोच और बर्थ या सीट नंबर नोट करें।",
+        "सुरक्षित हो तो फोटो लें।",
+        "RailMadad खोलें और ट्रेन शिकायत या स्टेशन शिकायत चुनें।",
+        "यात्रा की जानकारी भरें, समस्या लिखें और फोटो जोड़ें।",
+        "शिकायत नंबर सहेजें और वेबसाइट पर जवाब ट्रैक करें।"
+      ],
+      "bn": [
+        "আপনার PNR, ট্রেন নম্বর, কামরা এবং আসন নম্বর লিখে রাখুন।",
+        "নিরাপদ হলে ছবি তুলুন।",
+        "রেলমদদ খুলে ট্রেন অভিযোগ বা স্টেশন অভিযোগ বেছে নিন।",
+        "যাত্রার তথ্য দিন, সমস্যা লিখুন এবং ছবি যুক্ত করুন।",
+        "অভিযোগ নম্বর সংরক্ষণ করুন এবং ওয়েবসাইটে উত্তর ট্র্যাক করুন।"
+      ]
+    },
+    "number": null,
+    "officialUrl": "https://railmadad.indianrailways.gov.in/madad/final/home.jsp",
+    "sourceName": "Indian Railways — RailMadad (CRIS)",
+    "sourceUrl": "https://railmadad.indianrailways.gov.in/madad/final/home.jsp",
+    "verifiedDate": "2026-11-18",
+    "emergency": false,
+    "featured": true,
+    "keywords": ["railmadad", "rail madad", "train complaint", "toilet", "dirty", "coach", "station", "bed bug", "water", "ac", "shikayat", "रेलमदद", "ट्रेन शिकायत", "टॉयलेट", "गंदा", "রেলমদদ", "ট্রেনের অভিযোগ", "শৌচালয়", "নোংরা"]
+  },
+  {
+    "id": "irctc-portal",
+    "category": "railway",
+    "scope": "national",
+    "name": {
+      "en": "IRCTC — book train tickets",
+      "hi": "IRCTC — ट्रेन टिकट बुक करें",
+      "bn": "IRCTC — ট্রেনের টিকিট বুক করুন"
+    },
+    "purpose": {
+      "en": "The official Indian Railways website for booking tickets, checking seat availability and managing a booking.",
+      "hi": "टिकट बुक करने, सीट उपलब्धता देखने और बुकिंग संभालने की भारतीय रेल की आधिकारिक वेबसाइट।",
+      "bn": "টিকিট বুক করা, আসন পাওয়া যাচ্ছে কি না দেখা এবং বুকিং সামলানোর ভারতীয় রেলের সরকারি ওয়েবসাইট।"
+    },
+    "when": {
+      "en": "You want to book a train ticket or check whether a seat is available.",
+      "hi": "आप ट्रेन का टिकट बुक करना या सीट उपलब्ध है या नहीं देखना चाहते हैं।",
+      "bn": "আপনি ট্রেনের টিকিট বুক করতে বা আসন আছে কি না দেখতে চান।"
+    },
+    "steps": {
+      "en": [
+        "Open the official IRCTC website or the IRCTC Rail Connect app.",
+        "Enter the station names, journey date and class.",
+        "Check availability before paying. HelpSetu never shows live seats itself.",
+        "Book only on IRCTC and keep your PNR safe."
+      ],
+      "hi": [
+        "आधिकारिक IRCTC वेबसाइट या IRCTC Rail Connect ऐप खोलें।",
+        "स्टेशन के नाम, यात्रा की तारीख और क्लास भरें।",
+        "भुगतान से पहले उपलब्धता देखें। HelpSetu खुद लाइव सीट नहीं दिखाता।",
+        "सिर्फ़ IRCTC पर बुक करें और अपना PNR सुरक्षित रखें।"
+      ],
+      "bn": [
+        "সরকারি IRCTC ওয়েবসাইট বা IRCTC Rail Connect অ্যাপ খুলুন।",
+        "স্টেশনের নাম, যাত্রার তারিখ ও ক্লাস দিন।",
+        "টাকা দেওয়ার আগে আসন আছে কি না দেখুন। HelpSetu নিজে লাইভ সিট দেখায় না।",
+        "শুধু IRCTC-তে বুক করুন এবং PNR সুরক্ষিত রাখুন।"
+      ]
+    },
+    "number": null,
+    "officialUrl": "https://www.irctc.co.in/nget/train-search",
+    "sourceName": "Indian Railway Catering and Tourism Corporation (IRCTC)",
+    "sourceUrl": "https://www.irctc.co.in/",
+    "verifiedDate": "2026-11-18",
+    "emergency": false,
+    "featured": true,
+    "keywords": ["irctc", "ticket", "booking", "seat", "train ticket", "reservation", "टिकट", "सीट", "बुकिंग", "आरक्षण", "টিকিট", "আসন", "বুকিং"]
+  },
+  {
+    "id": "ntes-portal",
+    "category": "railway",
+    "scope": "national",
+    "name": {
+      "en": "NTES — live train running status",
+      "hi": "NTES — ट्रेन की लाइव स्थिति",
+      "bn": "NTES — ট্রেনের লাইভ অবস্থান"
+    },
+    "purpose": {
+      "en": "Official National Train Enquiry System for live running status, expected arrival, platform number and train schedule.",
+      "hi": "लाइव स्थिति, आने का अनुमानित समय, प्लेटफ़ॉर्म नंबर और समय-सारिणी के लिए आधिकारिक राष्ट्रीय ट्रेन पूछताछ प्रणाली।",
+      "bn": "লাইভ অবস্থান, সম্ভাব্য আগমন, প্ল্যাটফর্ম নম্বর ও সময়সূচির সরকারি জাতীয় ট্রেন তথ্য ব্যবস্থা।"
+    },
+    "when": {
+      "en": "Your train is late, you want to know its platform, or someone is coming to receive you.",
+      "hi": "ट्रेन लेट है, प्लेटफ़ॉर्म जानना है, या किसी को रिसीव करने आना है।",
+      "bn": "ট্রেন দেরিতে আছে, প্ল্যাটফর্ম জানতে চান, বা কাউকে রিসিভ করতে আসতে হবে।"
+    },
+    "steps": {
+      "en": [
+        "Open NTES and choose Running Status.",
+        "Enter the train number or train name.",
+        "Select your journey date and station to see the live position.",
+        "Platform numbers can change — check the station display board too."
+      ],
+      "hi": [
+        "NTES खोलें और Running Status चुनें।",
+        "ट्रेन नंबर या ट्रेन का नाम भरें।",
+        "यात्रा की तारीख और स्टेशन चुनकर लाइव स्थिति देखें।",
+        "प्लेटफ़ॉर्म बदल सकता है — स्टेशन का डिस्प्ले बोर्ड भी देखें।"
+      ],
+      "bn": [
+        "NTES খুলে Running Status বেছে নিন।",
+        "ট্রেন নম্বর বা ট্রেনের নাম দিন।",
+        "যাত্রার তারিখ ও স্টেশন বেছে লাইভ অবস্থান দেখুন।",
+        "প্ল্যাটফর্ম বদলাতে পারে — স্টেশনের ডিসপ্লে বোর্ডও দেখুন।"
+      ]
+    },
+    "number": null,
+    "officialUrl": "https://enquiry.indianrail.gov.in/ntes/",
+    "sourceName": "Indian Railways — NTES",
+    "sourceUrl": "https://enquiry.indianrail.gov.in/ntes/",
+    "verifiedDate": "2026-11-18",
+    "emergency": false,
+    "featured": true,
+    "keywords": ["ntes", "train late", "running status", "where is my train", "platform", "schedule", "ट्रेन लेट", "लाइव", "प्लेटफॉर्म", "ট্রেন দেরি", "লাইভ", "প্ল্যাটফর্ম"]
+  },
+  {
+    "id": "pnr-portal",
+    "category": "railway",
+    "scope": "national",
+    "name": {
+      "en": "Check PNR status",
+      "hi": "PNR स्थिति देखें",
+      "bn": "PNR স্ট্যাটাস দেখুন"
+    },
+    "purpose": {
+      "en": "Official Indian Railways PNR enquiry: check whether your ticket is confirmed, waitlisted or cancelled.",
+      "hi": "भारतीय रेल की आधिकारिक PNR पूछताछ: देखें कि टिकट कन्फर्म है, वेटलिस्ट है या रद्द हुआ है।",
+      "bn": "ভারতীয় রেলের সরকারি PNR তথ্য: টিকিট কনফার্ম, ওয়েটলিস্ট বা বাতিল হয়েছে কি না দেখুন।"
+    },
+    "when": {
+      "en": "You have a 10-digit PNR number from your ticket.",
+      "hi": "आपके टिकट पर 10 अंकों का PNR नंबर है।",
+      "bn": "আপনার টিকিটে ১০ সংখ্যার PNR নম্বর আছে।"
+    },
+    "steps": {
+      "en": [
+        "Open the official PNR enquiry page.",
+        "Type the 10-digit PNR printed on your ticket.",
+        "Check the coach, berth and current status. Never share your PNR publicly.",
+        "Call 139 if the website does not work."
+      ],
+      "hi": [
+        "आधिकारिक PNR पूछताछ पेज खोलें।",
+        "टिकट पर छपा 10 अंकों का PNR लिखें।",
+        "कोच, बर्थ और मौजूदा स्थिति देखें। PNR सार्वजनिक रूप से साझा न करें।",
+        "वेबसाइट न चले तो 139 पर कॉल करें।"
+      ],
+      "bn": [
+        "সরকারি PNR তথ্য পাতাটি খুলুন।",
+        "টিকিটে লেখা ১০ সংখ্যার PNR লিখুন।",
+        "কামরা, আসন ও বর্তমান অবস্থা দেখুন। PNR প্রকাশ্যে শেয়ার করবেন না।",
+        "ওয়েবসাইট না চললে ১৩৯-এ ফোন করুন।"
+      ]
+    },
+    "number": null,
+    "officialUrl": "https://www.indianrail.gov.in/enquiry/PNR/PnrEnquiry.html",
+    "sourceName": "Indian Railways — Passenger Reservation System",
+    "sourceUrl": "https://www.indianrail.gov.in/enquiry/PNR/PnrEnquiry.html",
+    "verifiedDate": "2026-11-18",
+    "emergency": false,
+    "featured": true,
+    "keywords": ["pnr", "pnr status", "ticket status", "waitlist", "wl", "confirm", "पीएनआर", "टिकट स्थिति", "वेटिंग", "পিএনআর", "টিকিট স্ট্যাটাস", "ওয়েটিং"]
+  },
+  {
+    "id": "rajmarg-yatra-portal",
+    "category": "highway",
+    "scope": "national",
+    "name": {
+      "en": "Rajmarg Yatra — highway help",
+      "hi": "राजमार्ग यात्रा — हाईवे सहायता",
+      "bn": "রাজমার্গ যাত্রা — হাইওয়ে সাহায্য"
+    },
+    "purpose": {
+      "en": "NHAI's official portal for highway complaints, toll and FASTag issues, route planning and emergency help.",
+      "hi": "हाईवे शिकायत, टोल और FASTag समस्या, रूट प्लानिंग और आपात सहायता के लिए NHAI का आधिकारिक पोर्टल।",
+      "bn": "হাইওয়ের অভিযোগ, টোল ও FASTag সমস্যা, রুট পরিকল্পনা এবং জরুরি সাহায্যের জন্য NHAI-র সরকারি পোর্টাল।"
+    },
+    "when": {
+      "en": "Vehicle breakdown, bad road, toll overcharging, FASTag problem or an accident on a national highway.",
+      "hi": "गाड़ी खराब, खराब सड़क, टोल में ज़्यादा पैसे, FASTag समस्या या राष्ट्रीय राजमार्ग पर दुर्घटना।",
+      "bn": "গাড়ি নষ্ট, খারাপ রাস্তা, টোলে বেশি টাকা, FASTag সমস্যা বা জাতীয় মহাসড়কে দুর্ঘটনা।"
+    },
+    "steps": {
+      "en": [
+        "For an accident or injury, call 112 first.",
+        "For breakdown or towing on a national highway, call 1033.",
+        "Open Rajmarg Yatra to file a complaint or check highway services.",
+        "Note the kilometre stone or toll plaza name to give your location."
+      ],
+      "hi": [
+        "दुर्घटना या चोट हो तो पहले 112 पर कॉल करें।",
+        "राष्ट्रीय राजमार्ग पर गाड़ी खराब या टोइंग के लिए 1033 पर कॉल करें।",
+        "शिकायत दर्ज करने या हाईवे सेवाएँ देखने के लिए राजमार्ग यात्रा खोलें।",
+        "अपनी जगह बताने के लिए किलोमीटर पत्थर या टोल प्लाज़ा का नाम नोट करें।"
+      ],
+      "bn": [
+        "দুর্ঘটনা বা আঘাত হলে আগে ১১২-তে ফোন করুন।",
+        "জাতীয় মহাসড়কে গাড়ি নষ্ট বা টোয়িংয়ের জন্য ১০৩৩-এ ফোন করুন।",
+        "অভিযোগ দিতে বা হাইওয়ে পরিষেবা দেখতে রাজমার্গ যাত্রা খুলুন।",
+        "আপনার জায়গা বলার জন্য কিলোমিটার পাথর বা টোল প্লাজার নাম লিখে রাখুন।"
+      ]
+    },
+    "number": null,
+    "officialUrl": "https://rajmargyatra.nhai.gov.in/",
+    "sourceName": "National Highways Authority of India (NHAI)",
+    "sourceUrl": "https://rajmargyatra.nhai.gov.in/",
+    "verifiedDate": "2026-11-18",
+    "emergency": false,
+    "featured": false,
+    "keywords": ["rajmarg", "highway", "nhai", "toll", "fastag", "road", "rajmarg yatra", "हाईवे", "राजमार्ग", "टोल", "सड़क", "হাইওয়ে", "মহাসড়ক", "টোল", "রাস্তা"]
+  },
+  {
+    "id": "cybercrime-portal",
+    "category": "cyber",
+    "scope": "national",
+    "name": {
+      "en": "Cybercrime portal — file a complaint",
+      "hi": "साइबर अपराध पोर्टल — शिकायत दर्ज करें",
+      "bn": "সাইবার অপরাধ পোর্টাল — অভিযোগ দিন"
+    },
+    "purpose": {
+      "en": "Official National Cyber Crime Reporting Portal. Report financial fraud, fake profiles, harassment, hacking and child abuse material.",
+      "hi": "आधिकारिक राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल। वित्तीय धोखाधड़ी, फ़र्ज़ी प्रोफ़ाइल, परेशानी, हैकिंग और बाल शोषण की शिकायत करें।",
+      "bn": "সরকারি জাতীয় সাইবার অপরাধ রিপোর্টিং পোর্টাল। আর্থিক প্রতারণা, ভুয়া প্রোফাইল, হয়রানি, হ্যাকিং ও শিশু নির্যাতনের অভিযোগ দিন।"
+    },
+    "when": {
+      "en": "You lost money online, or you are being blackmailed, harassed or hacked online.",
+      "hi": "ऑनलाइन पैसे चोरी हुए, या ऑनलाइन ब्लैकमेल, परेशानी या हैकिंग हो रही है।",
+      "bn": "অনলাইনে টাকা খোয়া গেছে, বা অনলাইনে ব্ল্যাকমেইল, হয়রানি বা হ্যাকিং হচ্ছে।"
+    },
+    "steps": {
+      "en": [
+        "For money fraud, call 1930 immediately — the first few hours matter most.",
+        "Also inform your bank so the transaction can be frozen.",
+        "Open cybercrime.gov.in and choose Report Cyber Crime.",
+        "Keep screenshots, transaction IDs, phone numbers and profile links ready.",
+        "Never pay a blackmailer and never share OTP or passwords."
+      ],
+      "hi": [
+        "पैसे की धोखाधड़ी में तुरंत 1930 पर कॉल करें — पहले कुछ घंटे सबसे ज़रूरी हैं।",
+        "अपने बैंक को भी बताएँ ताकि लेन-देन रोका जा सके।",
+        "cybercrime.gov.in खोलें और Report Cyber Crime चुनें।",
+        "स्क्रीनशॉट, ट्रांजैक्शन ID, फोन नंबर और प्रोफ़ाइल लिंक तैयार रखें।",
+        "ब्लैकमेल करने वाले को पैसे न दें और OTP या पासवर्ड कभी साझा न करें।"
+      ],
+      "bn": [
+        "টাকার প্রতারণায় সঙ্গে সঙ্গে ১৯৩০-এ ফোন করুন — প্রথম কয়েক ঘণ্টা সবচেয়ে জরুরি।",
+        "আপনার ব্যাংককেও জানান যাতে লেনদেন আটকানো যায়।",
+        "cybercrime.gov.in খুলে Report Cyber Crime বেছে নিন।",
+        "স্ক্রিনশট, ট্রানজেকশন আইডি, ফোন নম্বর ও প্রোফাইল লিংক হাতে রাখুন।",
+        "ব্ল্যাকমেইলকারীকে টাকা দেবেন না এবং OTP বা পাসওয়ার্ড কখনও শেয়ার করবেন না।"
+      ]
+    },
+    "number": null,
+    "officialUrl": "https://cybercrime.gov.in/",
+    "sourceName": "Ministry of Home Affairs — I4C",
+    "sourceUrl": "https://cybercrime.gov.in/",
+    "verifiedDate": "2026-11-18",
+    "emergency": false,
+    "featured": true,
+    "keywords": ["cybercrime", "cyber crime", "online fraud", "upi", "bank fraud", "blackmail", "hacking", "complaint", "साइबर", "धोखाधड़ी", "ऑनलाइन ठगी", "শিকায়াত", "সাইবার", "প্রতারণা", "অনলাইন"]
+  }
+]

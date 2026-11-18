@@ -1,0 +1,25 @@
+{
+  "name": "HelpSetu — India's essential services directory",
+  "short_name": "HelpSetu",
+  "description": "Find the right help. Fast. Verified emergency, railway, highway, gas, cybercrime and government helplines for India. Works offline.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F8FAFC",
+  "theme_color": "#1E1B4B",
+  "lang": "en",
+  "categories": ["utilities", "government", "health", "travel"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Emergency 112", "short_name": "Call 112", "url": "./#/service/national-erss-112", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Railway help 139", "short_name": "Rail 139", "url": "./#/service/national-railmadad-139", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Saved services", "short_name": "Saved", "url": "./#/saved", "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

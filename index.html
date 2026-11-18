@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>HelpSetu — India's essential services directory</title>
+  <meta name="description" content="Find the right help. Fast. Verified emergency numbers, railway, highway, LPG, cybercrime and government helplines for India. Works offline.">
+  <meta name="theme-color" content="#F8FAFC">
+  <meta name="color-scheme" content="light dark">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="HelpSetu">
+  <link rel="stylesheet" href="styles.css?v=1.1.0">
+  <script src="data.js?v=1.1.0" defer></script>
+  <script src="i18n.js?v=1.1.0" defer></script>
+  <script src="i18n-extra.js?v=1.1.0" defer></script>
+  <script src="data-i18n.js?v=1.1.0" defer></script>
+  <script src="core.js?v=1.1.0" defer></script>
+  <script src="views.js?v=1.1.0" defer></script>
+  <script src="views2.js?v=1.1.0" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="app">
+    <div class="offline-bar" id="offline-bar" role="status" hidden>
+      <span class="dot" aria-hidden="true"></span>
+      <span data-i18n="offlineText">You are offline. Saved numbers still work.</span>
+    </div>
+    <div id="update-root"></div>
+    <header class="topbar" id="topbar"></header>
+    <main id="main" tabindex="-1"></main>
+    <nav class="tabbar" id="tabbar" aria-label="Main navigation"></nav>
+    <div id="sheet-root"></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <noscript>
+    <div class="noscript">
+      <h1>HelpSetu</h1>
+      <p>Please turn on JavaScript to use HelpSetu. In an emergency, call <a href="tel:112">112</a>.</p>
+    </div>
+  </noscript>
+</body>
+</html>

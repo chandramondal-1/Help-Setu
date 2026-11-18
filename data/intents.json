@@ -1,0 +1,371 @@
+[
+  {
+    "id": "train-toilet-dirty",
+    "icon": "train",
+    "title": { "en": "Dirty train toilet or coach", "hi": "ट्रेन का टॉयलेट या कोच गंदा", "bn": "ট্রেনের শৌচালয় বা কামরা নোংরা" },
+    "phrases": {
+      "en": ["train toilet is dirty", "smelly toilet", "coach is dirty", "no water in toilet", "bed bugs", "dirty blanket", "toilet not cleaned", "garbage in coach"],
+      "hi": ["ट्रेन का टॉयलेट गंदा है", "टॉयलेट बदबू कर रहा है", "कोच गंदा है", "टॉयलेट में पानी नहीं", "खटमल", "गंदी चादर", "सफाई नहीं हुई"],
+      "bn": ["ট্রেনের টয়লেট নোংরা", "শৌচালয় দুর্গন্ধ", "কামরা নোংরা", "টয়লেটে জল নেই", "ছারপোকা", "নোংরা চাদর", "পরিষ্কার করা হয়নি"]
+    },
+    "serviceIds": ["national-railmadad-139", "rail-madad-portal"],
+    "steps": {
+      "en": ["Note your PNR, coach and berth number.", "Take a photo if it is safe.", "Call 139 or file on RailMadad and keep the complaint number."],
+      "hi": ["अपना PNR, कोच और बर्थ नंबर नोट करें।", "सुरक्षित हो तो फोटो लें।", "139 पर कॉल करें या RailMadad पर शिकायत दर्ज करें और नंबर रखें।"],
+      "bn": ["আপনার PNR, কামরা ও আসন নম্বর লিখুন।", "নিরাপদ হলে ছবি তুলুন।", "১৩৯-এ ফোন করুন বা রেলমদদে অভিযোগ দিন এবং নম্বর রাখুন।"]
+    }
+  },
+  {
+    "id": "train-late-status",
+    "icon": "clock",
+    "title": { "en": "Train is late or where is it?", "hi": "ट्रेन लेट है या कहाँ है?", "bn": "ট্রেন দেরি বা কোথায় আছে?" },
+    "phrases": {
+      "en": ["train is late", "running status", "where is my train", "train platform", "train cancelled", "train diverted", "train time"],
+      "hi": ["ट्रेन लेट है", "ट्रेन कहाँ है", "रनिंग स्टेटस", "ट्रेन का प्लेटफॉर्म", "ट्रेन रद्द", "ट्रेन का समय"],
+      "bn": ["ট্রেন দেরি", "ট্রেন কোথায়", "রানিং স্ট্যাটাস", "প্ল্যাটফর্ম", "ট্রেন বাতিল", "ট্রেনের সময়"]
+    },
+    "serviceIds": ["ntes-portal", "national-railmadad-139"],
+    "steps": {
+      "en": ["Open NTES and enter the train number.", "Check the live position and platform.", "Also check the station display board before boarding."],
+      "hi": ["NTES खोलें और ट्रेन नंबर भरें।", "लाइव स्थिति और प्लेटफ़ॉर्म देखें।", "चढ़ने से पहले स्टेशन का डिस्प्ले बोर्ड भी देखें।"],
+      "bn": ["NTES খুলে ট্রেন নম্বর দিন।", "লাইভ অবস্থান ও প্ল্যাটফর্ম দেখুন।", "ওঠার আগে স্টেশনের ডিসপ্লে বোর্ডও দেখুন।"]
+    }
+  },
+  {
+    "id": "train-seat-availability",
+    "icon": "seat",
+    "title": { "en": "Check seat availability", "hi": "सीट उपलब्धता देखें", "bn": "আসন পাওয়া যাচ্ছে কি না দেখুন" },
+    "phrases": {
+      "en": ["seat availability", "is a seat available", "waiting list", "tatkal", "book train ticket", "berth availability", "sleeper seat"],
+      "hi": ["सीट उपलब्ध है", "सीट अवेलेबिलिटी", "वेटिंग लिस्ट", "तत्काल", "ट्रेन टिकट बुक", "बर्थ", "स्लीपर सीट"],
+      "bn": ["আসন আছে কি", "সিট অ্যাভেইলেবিলিটি", "ওয়েটিং লিস্ট", "তৎকাল", "ট্রেনের টিকিট", "বার্থ", "স্লিপার"]
+    },
+    "serviceIds": ["irctc-portal", "pnr-portal"],
+    "steps": {
+      "en": ["Open IRCTC and enter stations, date and class.", "Check availability before paying.", "HelpSetu does not show live seats itself — IRCTC is the official source."],
+      "hi": ["IRCTC खोलें और स्टेशन, तारीख व क्लास भरें।", "भुगतान से पहले उपलब्धता देखें।", "HelpSetu खुद लाइव सीट नहीं दिखाता — IRCTC आधिकारिक स्रोत है।"],
+      "bn": ["IRCTC খুলে স্টেশন, তারিখ ও ক্লাস দিন।", "টাকা দেওয়ার আগে আসন দেখুন।", "HelpSetu নিজে লাইভ সিট দেখায় না — IRCTC সরকারি সূত্র।"]
+    }
+  },
+  {
+    "id": "pnr-status",
+    "icon": "ticket",
+    "title": { "en": "Check PNR status", "hi": "PNR स्थिति देखें", "bn": "PNR স্ট্যাটাস দেখুন" },
+    "phrases": {
+      "en": ["pnr status", "is my ticket confirmed", "waitlist confirmed", "check pnr", "ticket status"],
+      "hi": ["पीएनआर स्टेटस", "टिकट कन्फर्म है", "वेटिंग कन्फर्म", "पीएनआर चेक", "टिकट की स्थिति"],
+      "bn": ["পিএনআর স্ট্যাটাস", "টিকিট কনফার্ম", "ওয়েটিং কনফার্ম", "পিএনআর চেক", "টিকিটের অবস্থা"]
+    },
+    "serviceIds": ["pnr-portal", "national-railmadad-139"],
+    "steps": {
+      "en": ["Open the PNR page.", "Enter the 10-digit PNR from your ticket.", "Do not share your PNR publicly."],
+      "hi": ["PNR पेज खोलें।", "टिकट का 10 अंकों वाला PNR भरें।", "अपना PNR सार्वजनिक रूप से साझा न करें।"],
+      "bn": ["PNR পাতা খুলুন।", "টিকিটের ১০ সংখ্যার PNR দিন।", "আপনার PNR প্রকাশ্যে শেয়ার করবেন না।"]
+    }
+  },
+  {
+    "id": "train-security-medical",
+    "icon": "shield",
+    "title": { "en": "Security or medical help on a train", "hi": "ट्रेन में सुरक्षा या चिकित्सा सहायता", "bn": "ট্রেনে নিরাপত্তা বা চিকিৎসা সহায়তা" },
+    "phrases": {
+      "en": ["someone is harassing me on train", "theft on train", "seat is occupied", "fight in train", "medical emergency train", "sick passenger train", "eve teasing train", "railway police"],
+      "hi": ["ट्रेन में कोई परेशान कर रहा है", "ट्रेन में चोरी", "मेरी सीट पर कोई बैठा है", "ट्रेन में झगड़ा", "ट्रेन में चिकित्सा", "बीमार यात्री", "रेल पुलिस"],
+      "bn": ["ট্রেনে কেউ হয়রানি করছে", "ট্রেনে চুরি", "আমার আসনে কেউ বসে", "ট্রেনে ঝগড়া", "ট্রেনে চিকিৎসা", "অসুস্থ যাত্রী", "রেল পুলিশ"]
+    },
+    "serviceIds": ["national-railmadad-139", "national-rpf-security-182", "national-erss-112"],
+    "steps": {
+      "en": ["Move near other passengers if you can.", "Call 139 for railway security or medical help; 182 also reaches RPF.", "For immediate danger, call 112."],
+      "hi": ["संभव हो तो दूसरे यात्रियों के पास जाएँ।", "रेल सुरक्षा या चिकित्सा के लिए 139; 182 से RPF भी मिलती है।", "तुरंत खतरा हो तो 112 पर कॉल करें।"],
+      "bn": ["সম্ভব হলে অন্য যাত্রীদের কাছে যান।", "রেল নিরাপত্তা বা চিকিৎসার জন্য ১৩৯; ১৮২-তেও RPF পাওয়া যায়।", "সঙ্গে সঙ্গে বিপদ হলে ১১২-তে ফোন করুন।"]
+    }
+  },
+  {
+    "id": "highway-breakdown",
+    "icon": "car",
+    "title": { "en": "Vehicle broken down on a highway", "hi": "हाईवे पर गाड़ी खराब", "bn": "হাইওয়েতে গাড়ি নষ্ট" },
+    "phrases": {
+      "en": ["car breakdown", "bike broken", "flat tyre", "vehicle not starting", "towing needed", "crane needed", "fastag problem", "toll problem"],
+      "hi": ["गाड़ी खराब हो गई", "बाइक बंद", "टायर पंचर", "गाड़ी स्टार्ट नहीं", "टोइंग", "क्रेन", "फास्टैग", "टोल"],
+      "bn": ["গাড়ি নষ্ট", "বাইক নষ্ট", "টায়ার পাংচার", "গাড়ি চালু হচ্ছে না", "টোয়িং", "ক্রেন", "ফাস্ট্যাগ", "টোল"]
+    },
+    "serviceIds": ["national-nhai-highway-1033", "rajmarg-yatra-portal"],
+    "steps": {
+      "en": ["Park on the side and turn on hazard lights.", "Call 1033 with highway number, direction and nearest kilometre stone.", "Stand behind the crash barrier, away from traffic."],
+      "hi": ["गाड़ी किनारे लगाकर हैज़र्ड लाइट चालू करें।", "हाईवे नंबर, दिशा और नज़दीकी किलोमीटर पत्थर के साथ 1033 पर कॉल करें।", "क्रैश बैरियर के पीछे, ट्रैफ़िक से दूर खड़े रहें।"],
+      "bn": ["গাড়ি পাশে থামিয়ে হ্যাজার্ড লাইট জ্বালান।", "হাইওয়ে নম্বর, দিক ও কাছের কিলোমিটার পাথর বলে ১০৩৩-এ ফোন করুন।", "ক্র্যাশ ব্যারিয়ারের পিছনে, যানবাহন থেকে দূরে থাকুন।"]
+    }
+  },
+  {
+    "id": "highway-accident",
+    "icon": "accident",
+    "title": { "en": "Road accident", "hi": "सड़क दुर्घटना", "bn": "সড়ক দুর্ঘটনা" },
+    "phrases": {
+      "en": ["road accident", "accident on highway", "car crash", "bike accident", "someone is hurt", "unconscious after accident"],
+      "hi": ["सड़क दुर्घटना", "हाईवे पर एक्सीडेंट", "कार दुर्घटना", "बाइक एक्सीडेंट", "कोई घायल है", "बेहोश"],
+      "bn": ["সড়ক দুর্ঘটনা", "হাইওয়েতে দুর্ঘটনা", "গাড়ি দুর্ঘটনা", "বাইক দুর্ঘটনা", "কেউ আহত", "অচেতন"]
+    },
+    "serviceIds": ["national-erss-112", "national-ambulance-108", "national-nhai-highway-1033"],
+    "steps": {
+      "en": ["Call 112 for police, fire and ambulance.", "Do not move an injured person unless there is immediate danger.", "Give the exact location and nearest landmark."],
+      "hi": ["पुलिस, दमकल और एम्बुलेंस के लिए 112 पर कॉल करें।", "तुरंत खतरा न हो तो घायल को न हिलाएँ।", "सही जगह और नज़दीकी पहचान बताएँ।"],
+      "bn": ["পুলিশ, দমকল ও অ্যাম্বুলেন্সের জন্য ১১২-তে ফোন করুন।", "সঙ্গে সঙ্গে বিপদ না থাকলে আহতকে নাড়াবেন না।", "সঠিক জায়গা ও কাছের পরিচিত স্থান বলুন।"]
+    }
+  },
+  {
+    "id": "gas-leak",
+    "icon": "flame",
+    "title": { "en": "Gas leak or gas smell", "hi": "गैस लीक या गैस की गंध", "bn": "গ্যাস লিক বা গ্যাসের গন্ধ" },
+    "phrases": {
+      "en": ["gas leak", "smell of gas", "lpg leak", "cylinder leaking", "gas smell in kitchen", "regulator hissing"],
+      "hi": ["गैस लीक", "गैस की गंध", "सिलेंडर लीक", "रसोई में गैस", "रेगुलेटर से आवाज़"],
+      "bn": ["গ্যাস লিক", "গ্যাসের গন্ধ", "সিলিন্ডার লিক", "রান্নাঘরে গ্যাস", "রেগুলেটর শব্দ"]
+    },
+    "serviceIds": ["in-lpg-emergency-1906", "national-erss-112"],
+    "steps": {
+      "en": ["Do not switch any electrical switch on or off.", "Turn off the regulator if safe, open windows and take everyone outside.", "Call 1906 from outside. If there is fire or injury, call 112."],
+      "hi": ["कोई बिजली का स्विच चालू या बंद न करें।", "सुरक्षित हो तो रेगुलेटर बंद करें, खिड़कियाँ खोलें और सबको बाहर ले जाएँ।", "बाहर से 1906 पर कॉल करें। आग या चोट हो तो 112।"],
+      "bn": ["কোনও বিদ্যুতের সুইচ চালু বা বন্ধ করবেন না।", "নিরাপদ হলে রেগুলেটর বন্ধ করুন, জানালা খুলুন এবং সবাইকে বাইরে নিন।", "বাইরে থেকে ১৯০৬-এ ফোন করুন। আগুন বা আঘাত হলে ১১২।"]
+    }
+  },
+  {
+    "id": "online-financial-fraud",
+    "icon": "shield",
+    "title": { "en": "Online money fraud", "hi": "ऑनलाइन पैसे की ठगी", "bn": "অনলাইনে টাকার প্রতারণা" },
+    "phrases": {
+      "en": ["upi fraud", "money deducted", "online fraud", "bank fraud", "scam call", "otp fraud", "fake link", "investment scam", "money stolen from account"],
+      "hi": ["यूपीआई फ्रॉड", "पैसे कट गए", "ऑनलाइन ठगी", "बैंक धोखाधड़ी", "स्कैम कॉल", "ओटीपी फ्रॉड", "फर्जी लिंक", "निवेश घोटाला", "खाते से पैसे चोरी"],
+      "bn": ["ইউপিআই প্রতারণা", "টাকা কেটে নিয়েছে", "অনলাইন প্রতারণা", "ব্যাংক প্রতারণা", "স্ক্যাম কল", "ওটিপি প্রতারণা", "ভুয়া লিংক", "বিনিয়োগ প্রতারণা", "অ্যাকাউন্ট থেকে টাকা চুরি"]
+    },
+    "serviceIds": ["national-cybercrime-1930", "cybercrime-portal", "rbi-cms-portal"],
+    "steps": {
+      "en": ["Call 1930 right now — the first hours matter most.", "Call your bank and ask to block the transaction or card.", "Keep screenshots and transaction IDs, then file on cybercrime.gov.in."],
+      "hi": ["अभी 1930 पर कॉल करें — पहले कुछ घंटे सबसे ज़रूरी हैं।", "बैंक को कॉल करके लेन-देन या कार्ड ब्लॉक कराएँ।", "स्क्रीनशॉट और ट्रांजैक्शन ID रखें, फिर cybercrime.gov.in पर शिकायत करें।"],
+      "bn": ["এখনই ১৯৩০-এ ফোন করুন — প্রথম কয়েক ঘণ্টা সবচেয়ে জরুরি।", "ব্যাংকে ফোন করে লেনদেন বা কার্ড ব্লক করতে বলুন।", "স্ক্রিনশট ও ট্রানজেকশন আইডি রেখে cybercrime.gov.in-এ অভিযোগ দিন।"]
+    }
+  },
+  {
+    "id": "consumer-refund",
+    "icon": "bag",
+    "title": { "en": "Refund, bad product or shop problem", "hi": "रिफंड, खराब सामान या दुकान की समस्या", "bn": "রিফান্ড, নষ্ট পণ্য বা দোকানের সমস্যা" },
+    "phrases": {
+      "en": ["refund not received", "wrong product delivered", "damaged item", "seller not responding", "overcharged", "online order problem", "shop complaint"],
+      "hi": ["रिफंड नहीं मिला", "गलत सामान आया", "टूटा सामान", "दुकानदार जवाब नहीं दे रहा", "ज़्यादा पैसे लिए", "ऑनलाइन ऑर्डर", "दुकान की शिकायत"],
+      "bn": ["রিফান্ড পাইনি", "ভুল পণ্য এসেছে", "ভাঙা পণ্য", "বিক্রেতা সাড়া দিচ্ছে না", "বেশি টাকা নিয়েছে", "অনলাইন অর্ডার", "দোকানের অভিযোগ"]
+    },
+    "serviceIds": ["consumer-1915"],
+    "steps": {
+      "en": ["Keep the bill, order number and payment proof.", "Call 1915 or WhatsApp +91 88000 01915.", "Save the complaint number for tracking."],
+      "hi": ["बिल, ऑर्डर नंबर और भुगतान का सबूत रखें।", "1915 पर कॉल करें या +91 88000 01915 पर WhatsApp करें।", "ट्रैकिंग के लिए शिकायत नंबर सहेजें।"],
+      "bn": ["বিল, অর্ডার নম্বর ও পেমেন্টের প্রমাণ রাখুন।", "১৯১৫-এ ফোন করুন বা +91 88000 01915-এ হোয়াটসঅ্যাপ করুন।", "ট্র্যাকিংয়ের জন্য অভিযোগ নম্বর রাখুন।"]
+    }
+  },
+  {
+    "id": "need-ambulance",
+    "icon": "ambulance",
+    "title": { "en": "Need an ambulance", "hi": "एम्बुलेंस चाहिए", "bn": "অ্যাম্বুলেন্স দরকার" },
+    "phrases": {
+      "en": ["need ambulance", "ambulance", "someone is unconscious", "bleeding", "heart attack", "stroke", "pregnant woman delivery"],
+      "hi": ["एम्बुलेंस चाहिए", "एम्बुलेंस", "कोई बेहोश है", "खून बह रहा", "हार्ट अटैक", "लकवा", "गर्भवती महिला"],
+      "bn": ["অ্যাম্বুলেন্স দরকার", "অ্যাম্বুলেন্স", "কেউ অচেতন", "রক্তক্ষরণ", "হার্ট অ্যাটাক", "স্ট্রোক", "গর্ভবতী মা"]
+    },
+    "serviceIds": ["national-ambulance-108", "national-erss-112", "national-maternal-102"],
+    "steps": {
+      "en": ["Call 108 for an emergency ambulance.", "Give the exact address and nearest landmark.", "For pregnancy transport, 102 is the maternal ambulance."],
+      "hi": ["आपातकालीन एम्बुलेंस के लिए 108 पर कॉल करें।", "सही पता और नज़दीकी पहचान बताएँ।", "गर्भावस्था के लिए 102 मातृ एम्बुलेंस है।"],
+      "bn": ["জরুরি অ্যাম্বুলেন্সের জন্য ১০৮-এ ফোন করুন।", "সঠিক ঠিকানা ও কাছের পরিচিত স্থান বলুন।", "গর্ভাবস্থার জন্য ১০২ মাতৃত্ব অ্যাম্বুলেন্স।"]
+    }
+  },
+  {
+    "id": "fire",
+    "icon": "fire",
+    "title": { "en": "Fire emergency", "hi": "आग लगी है", "bn": "আগুন লেগেছে" },
+    "phrases": {
+      "en": ["fire", "house on fire", "smoke", "fire brigade", "burning", "cylinder caught fire"],
+      "hi": ["आग", "घर में आग", "धुआँ", "दमकल", "जल रहा है", "सिलेंडर में आग"],
+      "bn": ["আগুন", "বাড়িতে আগুন", "ধোঁয়া", "দমকল", "জ্বলছে", "সিলিন্ডারে আগুন"]
+    },
+    "serviceIds": ["national-erss-112", "fire-101-legacy"],
+    "steps": {
+      "en": ["Move everyone away from the fire.", "Call 112 and give the full address and floor.", "Do not go back inside for belongings."],
+      "hi": ["सबको आग से दूर ले जाएँ।", "112 पर कॉल करें और पूरा पता व मंज़िल बताएँ।", "सामान के लिए अंदर वापस न जाएँ।"],
+      "bn": ["সবাইকে আগুন থেকে দূরে নিন।", "১১২-তে ফোন করে পুরো ঠিকানা ও তলা বলুন।", "জিনিসপত্রের জন্য ভিতরে ফিরে যাবেন না।"]
+    }
+  },
+  {
+    "id": "woman-in-danger",
+    "icon": "heart",
+    "title": { "en": "Woman in danger or being harassed", "hi": "महिला खतरे में या छेड़छाड़", "bn": "মহিলা বিপদে বা হয়রানির শিকার" },
+    "phrases": {
+      "en": ["domestic violence", "woman in danger", "husband beating", "harassment", "stalking", "abuse at home", "dowry"],
+      "hi": ["घरेलू हिंसा", "महिला खतरे में", "पति मारता है", "छेड़छाड़", "पीछा करना", "घर में दुर्व्यवहार", "दहेज"],
+      "bn": ["ঘরোয়া নির্যাতন", "মহিলা বিপদে", "স্বামী মারধর", "হয়রানি", "পিছু নেওয়া", "বাড়িতে নির্যাতন", "যৌতুক"]
+    },
+    "serviceIds": ["national-womenhelpline-181", "national-erss-112", "national-women-police-1091"],
+    "steps": {
+      "en": ["For immediate danger, call 112.", "Call 181 for support, a One Stop Centre or legal help.", "Keep your phone and important documents with you if safe."],
+      "hi": ["तुरंत खतरा हो तो 112 पर कॉल करें।", "सहायता, वन स्टॉप सेंटर या कानूनी मदद के लिए 181 पर कॉल करें।", "सुरक्षित हो तो फोन और ज़रूरी दस्तावेज़ पास रखें।"],
+      "bn": ["সঙ্গে সঙ্গে বিপদ হলে ১১২-তে ফোন করুন।", "সহায়তা, ওয়ান স্টপ সেন্টার বা আইনি সাহায্যের জন্য ১৮১-এ ফোন করুন।", "নিরাপদ হলে ফোন ও জরুরি নথি কাছে রাখুন।"]
+    }
+  },
+  {
+    "id": "lost-child",
+    "icon": "child",
+    "title": { "en": "Lost child or child in danger", "hi": "बच्चा खो गया या खतरे में", "bn": "শিশু হারিয়ে গেছে বা বিপদে" },
+    "phrases": {
+      "en": ["lost child", "child is missing", "child abuse", "child crying alone", "child labour", "baby lost"],
+      "hi": ["बच्चा खो गया", "बच्चा गुम है", "बाल शोषण", "अकेला बच्चा रो रहा", "बाल मजदूरी", "शिशु खो गया"],
+      "bn": ["শিশু হারিয়ে গেছে", "শিশু নিখোঁজ", "শিশু নির্যাতন", "একা শিশু কাঁদছে", "শিশুশ্রম", "শিশু হারানো"]
+    },
+    "serviceIds": ["national-childhelpline-1098", "national-erss-112"],
+    "steps": {
+      "en": ["Call 1098. If there is immediate danger, call 112 too.", "Give the child's name, age and last seen place.", "Stay nearby and keep your phone reachable."],
+      "hi": ["1098 पर कॉल करें। तुरंत खतरा हो तो 112 भी।", "बच्चे का नाम, उम्र और आखिरी बार देखी जगह बताएँ।", "पास रहें और फोन पास रखें।"],
+      "bn": ["১০৯৮-এ ফোন করুন। সঙ্গে সঙ্গে বিপদ হলে ১১২-ও।", "শিশুর নাম, বয়স ও শেষ কোথায় দেখা গেছে বলুন।", "কাছে থাকুন এবং ফোন কাছে রাখুন।"]
+    }
+  },
+  {
+    "id": "mental-distress",
+    "icon": "mind",
+    "title": { "en": "Feeling very low or in crisis", "hi": "मन बहुत उदास या संकट में", "bn": "মন খুব খারাপ বা সংকটে" },
+    "phrases": {
+      "en": ["depressed", "suicidal", "mental health", "panic attack", "anxiety", "cannot sleep", "feeling hopeless"],
+      "hi": ["मन उदास है", "आत्महत्या", "मानसिक स्वास्थ्य", "घबराहट", "चिंता", "नींद नहीं", "निराशा"],
+      "bn": ["মন খারাপ", "আত্মহত্যা", "মানসিক স্বাস্থ্য", "প্যানিক", "উদ্বেগ", "ঘুম হচ্ছে না", "আশাহীন"]
+    },
+    "serviceIds": ["national-telemanas-14416", "national-erss-112"],
+    "steps": {
+      "en": ["Call 14416 for free, confidential mental health support.", "You do not need a diagnosis to call.", "If there is immediate danger, call 112 or go to a hospital."],
+      "hi": ["मुफ़्त, गोपनीय मानसिक स्वास्थ्य सहायता के लिए 14416 पर कॉल करें।", "कॉल करने के लिए किसी निदान की ज़रूरत नहीं।", "तुरंत खतरा हो तो 112 या अस्पताल जाएँ।"],
+      "bn": ["বিনামূল্যে, গোপনীয় মানসিক স্বাস্থ্য সহায়তার জন্য ১৪৪১৬-এ ফোন করুন।", "ফোন করতে কোনও রোগনির্ণয় লাগবে না।", "সঙ্গে সঙ্গে বিপদ হলে ১১২ বা হাসপাতালে যান।"]
+    }
+  },
+  {
+    "id": "elder-abuse",
+    "icon": "elder",
+    "title": { "en": "Older person needs help", "hi": "बुज़ुर्ग को मदद चाहिए", "bn": "প্রবীণের সাহায্য দরকার" },
+    "phrases": {
+      "en": ["elder abuse", "old parents alone", "senior citizen help", "pension problem", "elderly neglected", "old age home"],
+      "hi": ["बुज़ुर्ग के साथ दुर्व्यवहार", "अकेले माता-पिता", "वरिष्ठ नागरिक सहायता", "पेंशन समस्या", "बुज़ुर्ग की उपेक्षा", "वृद्धाश्रम"],
+      "bn": ["প্রবীণের প্রতি নির্যাতন", "একা বাবা-মা", "প্রবীণ সহায়তা", "পেনশন সমস্যা", "অবহেলা", "বৃদ্ধাশ্রম"]
+    },
+    "serviceIds": ["national-elderline-14567", "national-erss-112"],
+    "steps": {
+      "en": ["Call 14567 between 8 AM and 8 PM.", "Keep pension and medical papers ready.", "For immediate danger, call 112."],
+      "hi": ["सुबह 8 से रात 8 बजे तक 14567 पर कॉल करें।", "पेंशन और मेडिकल कागज़ तैयार रखें।", "तुरंत खतरा हो तो 112 पर कॉल करें।"],
+      "bn": ["সকাল ৮টা থেকে রাত ৮টা পর্যন্ত ১৪৫৬৭-এ ফোন করুন।", "পেনশন ও চিকিৎসার কাগজ তৈরি রাখুন।", "সঙ্গে সঙ্গে বিপদ হলে ১১২-তে ফোন করুন।"]
+    }
+  },
+  {
+    "id": "legal-help",
+    "icon": "scale",
+    "title": { "en": "Free legal help", "hi": "मुफ़्त कानूनी सहायता", "bn": "বিনামূল্যে আইনি সহায়তা" },
+    "phrases": {
+      "en": ["need a lawyer", "free legal aid", "legal advice", "cannot afford lawyer", "court case help"],
+      "hi": ["वकील चाहिए", "मुफ़्त कानूनी सहायता", "कानूनी सलाह", "वकील का खर्च नहीं", "कोर्ट केस"],
+      "bn": ["উকিল দরকার", "বিনামূল্যে আইনি সহায়তা", "আইনি পরামর্শ", "উকিলের খরচ নেই", "কোর্টের মামলা"]
+    },
+    "serviceIds": ["national-nalsa-15100"],
+    "steps": {
+      "en": ["Call 15100 and explain the problem.", "Ask which documents are needed for free legal aid."],
+      "hi": ["15100 पर कॉल करें और समस्या बताएँ।", "मुफ़्त कानूनी सहायता के दस्तावेज़ पूछें।"],
+      "bn": ["১৫১০০-এ ফোন করে সমস্যা বলুন।", "বিনামূল্যে আইনি সহায়তার নথি জিজ্ঞাসা করুন।"]
+    }
+  },
+  {
+    "id": "passport-help",
+    "icon": "passport",
+    "title": { "en": "Passport application or renewal", "hi": "पासपोर्ट आवेदन या नवीनीकरण", "bn": "পাসপোর্টের আবেদন বা নবীকরণ" },
+    "phrases": {
+      "en": ["passport apply", "passport renewal", "passport appointment", "passport status", "police clearance"],
+      "hi": ["पासपोर्ट आवेदन", "पासपोर्ट नवीनीकरण", "पासपोर्ट अपॉइंटमेंट", "पासपोर्ट स्टेटस", "पुलिस क्लीयरेंस"],
+      "bn": ["পাসপোর্ট আবেদন", "পাসপোর্ট নবীকরণ", "পাসপোর্ট অ্যাপয়েন্টমেন্ট", "পাসপোর্ট স্ট্যাটাস", "পুলিশ ক্লিয়ারেন্স"]
+    },
+    "serviceIds": ["passport-seva-portal"],
+    "steps": {
+      "en": ["Register on passportindia.gov.in.", "Fill the form, pay online and book a slot.", "Take original documents and photocopies."],
+      "hi": ["passportindia.gov.in पर रजिस्टर करें।", "फ़ॉर्म भरें, ऑनलाइन भुगतान करें और स्लॉट बुक करें।", "मूल दस्तावेज़ और फोटोकॉपी ले जाएँ।"],
+      "bn": ["passportindia.gov.in-এ রেজিস্টার করুন।", "ফর্ম পূরণ, অনলাইন পেমেন্ট ও স্লট বুক করুন।", "মূল নথি ও ফটোকপি নিয়ে যান।"]
+    }
+  },
+  {
+    "id": "electricity-water",
+    "icon": "bolt",
+    "title": { "en": "No electricity or water", "hi": "बिजली या पानी नहीं", "bn": "বিদ্যুৎ বা জল নেই" },
+    "phrases": {
+      "en": ["power cut", "no electricity", "electricity complaint", "no water", "water supply problem", "street light not working", "electricity bill problem"],
+      "hi": ["बिजली गई है", "बिजली नहीं", "बिजली शिकायत", "पानी नहीं", "पानी की समस्या", "स्ट्रीट लाइट खराब", "बिजली बिल"],
+      "bn": ["বিদ্যুৎ নেই", "কারেন্ট নেই", "বিদ্যুৎ অভিযোগ", "জল নেই", "জলের সমস্যা", "স্ট্রিট লাইট খারাপ", "বিদ্যুৎ বিল"]
+    },
+    "serviceIds": [],
+    "stateCategory": "utilities",
+    "steps": {
+      "en": ["Choose your state first, then pick your electricity or water board.", "For a live wire or dangerous situation, call 112 and keep everyone away."],
+      "hi": ["पहले अपना राज्य चुनें, फिर बिजली या जल बोर्ड चुनें।", "जीवित तार या खतरे की स्थिति में 112 पर कॉल करें और सबको दूर रखें।"],
+      "bn": ["প্রথমে আপনার রাজ্য বেছে নিন, তারপর বিদ্যুৎ বা জল সংস্থা বেছে নিন।", "জীবন্ত তার বা বিপদে ১১২-তে ফোন করুন এবং সবাইকে দূরে রাখুন।"]
+    }
+  },
+  {
+    "id": "train-lost-item",
+    "icon": "bag",
+    "title": { "en": "Lost something on a train", "hi": "ट्रेन में सामान खो गया", "bn": "ট্রেনে জিনিস হারিয়ে গেছে" },
+    "phrases": {
+      "en": ["lost bag on train", "left phone in train", "lost luggage", "forgot bag", "lost wallet train"],
+      "hi": ["ट्रेन में बैग खो गया", "फोन ट्रेन में छूट गया", "सामान खो गया", "बैग भूल गया", "बटुआ खो गया"],
+      "bn": ["ট্রেনে ব্যাগ হারিয়ে গেছে", "ফোন ট্রেনে ফেলে এসেছি", "জিনিস হারিয়ে গেছে", "ব্যাগ ভুলে গেছি", "মানিব্যাগ হারিয়ে গেছে"]
+    },
+    "serviceIds": ["national-railmadad-139", "rail-madad-portal"],
+    "steps": {
+      "en": ["Call 139 and give your PNR, coach, seat and a description of the item.", "File a lost-property complaint on RailMadad.", "Also inform the station master if you are still at the station."],
+      "hi": ["139 पर कॉल करें और PNR, कोच, सीट व सामान का विवरण दें।", "RailMadad पर खोए सामान की शिकायत दर्ज करें।", "स्टेशन पर हों तो स्टेशन मास्टर को भी बताएँ।"],
+      "bn": ["১৩৯-এ ফোন করে PNR, কামরা, আসন ও জিনিসের বিবরণ দিন।", "রেলমদদে হারানো জিনিসের অভিযোগ দিন।", "স্টেশনে থাকলে স্টেশন মাস্টারকেও জানান।"]
+    }
+  },
+  {
+    "id": "bank-atm-problem",
+    "icon": "bank",
+    "title": { "en": "Bank or ATM problem", "hi": "बैंक या ATM समस्या", "bn": "ব্যাংক বা ATM সমস্যা" },
+    "phrases": {
+      "en": ["money not withdrawn from atm", "wrong bank charges", "unauthorised transaction", "bank not responding", "card blocked"],
+      "hi": ["ATM से पैसे नहीं निकले", "गलत बैंक शुल्क", "अनधिकृत लेन-देन", "बैंक जवाब नहीं", "कार्ड ब्लॉक"],
+      "bn": ["ATM থেকে টাকা বের হয়নি", "ভুল ব্যাংক চার্জ", "অননুমোদিত লেনদেন", "ব্যাংক সাড়া দিচ্ছে না", "কার্ড ব্লক"]
+    },
+    "serviceIds": ["rbi-cms-portal", "national-cybercrime-1930"],
+    "steps": {
+      "en": ["Complain to your bank first and keep the complaint number.", "Wait 30 days for a reply.", "If unresolved, use the RBI complaint portal.", "If it is fraud, call 1930 immediately."],
+      "hi": ["पहले बैंक में शिकायत करें और नंबर रखें।", "जवाब के लिए 30 दिन रुकें।", "समाधान न मिले तो RBI शिकायत पोर्टल इस्तेमाल करें।", "धोखाधड़ी हो तो तुरंत 1930 पर कॉल करें।"],
+      "bn": ["প্রথমে ব্যাংকে অভিযোগ করে নম্বর রাখুন।", "উত্তরের জন্য ৩০ দিন অপেক্ষা করুন।", "সমাধান না হলে RBI অভিযোগ পোর্টাল ব্যবহার করুন।", "প্রতারণা হলে সঙ্গে সঙ্গে ১৯৩০-এ ফোন করুন।"]
+    }
+  },
+  {
+    "id": "online-harassment",
+    "icon": "shield",
+    "title": { "en": "Online harassment or blackmail", "hi": "ऑनलाइन परेशानी या ब्लैकमेल", "bn": "অনলাইন হয়রানি বা ব্ল্যাকমেইল" },
+    "phrases": {
+      "en": ["online blackmail", "someone threatening to share photos", "cyber bullying", "fake profile", "hacked account", "morphing photo"],
+      "hi": ["ऑनलाइन ब्लैकमेल", "फोटो शेयर करने की धमकी", "साइबर बुलिंग", "फर्जी प्रोफाइल", "अकाउंट हैक", "फोटो में छेड़छाड़"],
+      "bn": ["অনলাইনে ব্ল্যাকমেইল", "ছবি ছড়ানোর হুমকি", "সাইবার বুলিং", "ভুয়া প্রোফাইল", "অ্যাকাউন্ট হ্যাক", "ছবি বিকৃত"]
+    },
+    "serviceIds": ["cybercrime-portal", "national-cybercrime-1930", "national-womenhelpline-181"],
+    "steps": {
+      "en": ["Do not pay or send more photos.", "Save screenshots, profile links and messages.", "File on cybercrime.gov.in; call 1930 if money was taken.", "Call 181 if you need support."],
+      "hi": ["पैसे न दें और और फोटो न भेजें।", "स्क्रीनशॉट, प्रोफ़ाइल लिंक और संदेश सहेजें।", "cybercrime.gov.in पर शिकायत करें; पैसे गए हों तो 1930 पर कॉल करें।", "सहायता के लिए 181 पर कॉल करें।"],
+      "bn": ["টাকা দেবেন না বা আরও ছবি পাঠাবেন না।", "স্ক্রিনশট, প্রোফাইল লিংক ও মেসেজ রাখুন।", "cybercrime.gov.in-এ অভিযোগ দিন; টাকা গেলে ১৯৩০-এ ফোন করুন।", "সহায়তার জন্য ১৮১-এ ফোন করুন।"]
+    }
+  },
+  {
+    "id": "poison-snakebite",
+    "icon": "cross",
+    "title": { "en": "Poisoning or snake bite", "hi": "ज़हर या साँप का काटना", "bn": "বিষ বা সাপে কাটা" },
+    "phrases": {
+      "en": ["swallowed poison", "snake bite", "overdose", "chemical in eye", "gas inhalation", "food poisoning"],
+      "hi": ["ज़हर खा लिया", "साँप ने काटा", "ज़्यादा दवा", "आँख में केमिकल", "गैस से दम", "फूड पॉइज़निंग"],
+      "bn": ["বিষ খেয়েছে", "সাপে কেটেছে", "বেশি ওষুধ", "চোখে রাসায়নিক", "গ্যাসে শ্বাস", "খাবারে বিষ"]
+    },
+    "serviceIds": ["national-poison-aiims", "national-ambulance-108", "national-erss-112"],
+    "steps": {
+      "en": ["Call 1800-116-117 for poison advice.", "Call 112 or 108 if the person is unconscious or struggling to breathe.", "Keep the packet or medicine strip for the doctor."],
+      "hi": ["ज़हर की सलाह के लिए 1800-116-117 पर कॉल करें।", "बेहोशी या साँस की तकलीफ़ में 112 या 108 पर कॉल करें।", "डॉक्टर के लिए पैकेट या दवा की पत्ती रखें।"],
+      "bn": ["বিষের পরামর্শে ১৮০০-১১৬-১১৭-এ ফোন করুন।", "অচেতন বা শ্বাসকষ্ট হলে ১১২ বা ১০৮-এ ফোন করুন।", "ডাক্তারের জন্য প্যাকেট বা ওষুধের পাতা রাখুন।"]
+    }
+  }
+]

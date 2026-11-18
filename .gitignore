@@ -1,0 +1,17 @@
+# Build outputs and signing keys — never commit these.
+android/build/
+android/keystore/
+*.apk
+!HelpSetu-1.1.0.apk
+*.idsig
+*.jks
+*.keystore
+*.apex
+*.dex
+
+# Local / temporary files
+.DS_Store
+__pycache__/
+*.pyc
+*.log
+node_modules/

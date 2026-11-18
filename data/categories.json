@@ -1,0 +1,29 @@
+{
+  "meta": {
+    "appName": "HelpSetu",
+    "tagline": {
+      "en": "Find the right help. Fast.",
+      "hi": "सही मदद पाएँ। तुरंत।",
+      "bn": "সঠিক সাহায্য পান। দ্রুত।"
+    },
+    "verifiedNote": {
+      "en": "Independent directory. Every number links to its official source and shows the date it was checked.",
+      "hi": "स्वतंत्र निर्देशिका। हर नंबर के साथ आधिकारिक स्रोत और जाँच की तारीख दी गई है।",
+      "bn": "স্বাধীন ডিরেক্টরি। প্রতিটি নম্বরের সঙ্গে সরকারি সূত্র ও যাচাইয়ের তারিখ দেওয়া আছে।"
+    }
+  },
+  "categories": [
+    { "id": "emergency", "icon": "sos", "color": "red", "name": { "en": "Emergency", "hi": "आपातकाल", "bn": "জরুরি অবস্থা" } },
+    { "id": "railway", "icon": "train", "color": "indigo", "name": { "en": "Indian Railways", "hi": "भारतीय रेल", "bn": "ভারতীয় রেল" } },
+    { "id": "highway", "icon": "road", "color": "amber", "name": { "en": "Highway & Road", "hi": "राजमार्ग और सड़क", "bn": "মহাসড়ক ও রাস্তা" } },
+    { "id": "gas", "icon": "flame", "color": "orange", "name": { "en": "LPG & Gas", "hi": "एलपीजी और गैस", "bn": "এলপিজি ও গ্যাস" } },
+    { "id": "cyber", "icon": "shield", "color": "violet", "name": { "en": "Cybercrime", "hi": "साइबर अपराध", "bn": "সাইবার অপরাধ" } },
+    { "id": "consumer", "icon": "bag", "color": "teal", "name": { "en": "Consumer", "hi": "उपभोक्ता", "bn": "ভোক্তা" } },
+    { "id": "women_child", "icon": "heart", "color": "pink", "name": { "en": "Women & Child", "hi": "महिला और बच्चे", "bn": "নারী ও শিশু" } },
+    { "id": "government", "icon": "gov", "color": "blue", "name": { "en": "Government", "hi": "सरकारी सेवाएँ", "bn": "সরকারি সেবা" } },
+    { "id": "banking", "icon": "bank", "color": "green", "name": { "en": "Banking", "hi": "बैंकिंग", "bn": "ব্যাংকিং" } },
+    { "id": "utilities", "icon": "bolt", "color": "yellow", "name": { "en": "Electricity & Water", "hi": "बिजली और पानी", "bn": "বিদ্যুৎ ও জল" } },
+    { "id": "health", "icon": "cross", "color": "mint", "name": { "en": "Health & Ambulance", "hi": "स्वास्थ्य और एम्बुलेंस", "bn": "স্বাস্থ্য ও অ্যাম্বুলেন্স" } },
+    { "id": "travel", "icon": "plane", "color": "sky", "name": { "en": "Travel", "hi": "यात्रा", "bn": "ভ্রমণ" } }
+  ]
+}
