@@ -1,12 +1,12 @@
 {
-  "version": "1.1.0",
-  "versionCode": 1,
-  "apkUrl": "https://github.com/chandramondal-1/Help-Setu/releases/latest/download/HelpSetu-1.1.0.apk",
-  "notes": "Offline-first directory with 25 Indian languages, one-tap calling and developer WhatsApp support.",
+  "version": "1.2.0",
+  "versionCode": 2,
+  "apkUrl": "https://github.com/chandramondal-1/Help-Setu/releases/latest/download/HelpSetu-1.2.0.apk",
+  "notes": "HelpSetu 1.2.0 — 25 Indian languages, silent in-app content updates, one-tap calling and developer WhatsApp support.",
   "supportWhatsApp": "https://wa.me/918371998257",
   "web": {
-    "version": 5,
+    "version": 6,
     "file": "android/web-bundle.zip",
-    "sha256": "1ef6679bd67d2114e78fe0464571e5072feb218ab8f0df2b2f00acd6a527dde1"
+    "sha256": "7a3881747c0d696e097edd2ad1dc25fe2ad1a4b4b08100456cfaff187b31d7f0"
   }
 }

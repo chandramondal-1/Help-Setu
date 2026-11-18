@@ -12,8 +12,8 @@ JAVA_HOME="${JAVA_HOME:-/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Content
 export JAVA_HOME
 export PATH="$JAVA_HOME/bin:$BT:$PATH"
 
-VERSION="1.1.0"
-CODE=1
+VERSION="1.2.0"
+CODE=2
 BUILD="$ANDROID/build"
 OUT="$ROOT/HelpSetu-$VERSION.apk"
 KS="$ANDROID/keystore/helpsetu.jks"
@@ -46,7 +46,8 @@ path, digest = sys.argv[1], sys.argv[2]
 with open(path, encoding='utf-8') as f:
     data = json.load(f)
 web = data.setdefault('web', {})
-web['version'] = int(web.get('version', 1)) + 1
+# Bump web['version'] in update.json when publishing changed web content.
+web['version'] = int(web.get('version', 1))
 web['file'] = 'android/web-bundle.zip'
 web['sha256'] = digest
 with open(path, 'w', encoding='utf-8') as f:

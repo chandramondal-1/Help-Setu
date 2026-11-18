@@ -67,7 +67,7 @@
     };
   }
 
-  const APP_VERSION = '1.1.0';
+  const APP_VERSION = '1.2.0';
   const prefs = loadPrefs();
   const state = {
     ...prefs, sheet: null, installEvent: null, speaking: false, query: '',

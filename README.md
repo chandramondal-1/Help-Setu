@@ -2,6 +2,8 @@
 
 **Find the right help. Fast.**
 
+> **Version 1.2.0** — silent in-app content updates for the APK, a working in-app **Check for updates** button, and a fix for language selection on Marathi and every other auto-translated language.
+
 HelpSetu is a free, independent, offline-first directory of essential Indian public services and emergency helplines. It is built to be simple enough for a 70-year-old and a 5-year-old: one clear action per screen, big touch targets, plain language, and no ads or tracking.
 
 > In an emergency, call **112** — police, fire and ambulance, anywhere in India.
@@ -38,10 +40,12 @@ Do not open `index.html` directly with `file://` if you want the service worker 
 
 Browsers keep the app shell in the service-worker cache. When you change `styles.css`, `data.js`, `i18n.js`, `core.js`, `views.js` or `views2.js`, update the release version in **both** places:
 
-1. `VERSION` in `sw.js` (for example `helpsetu-v1.1.0`);
+1. `VERSION` in `sw.js` (for example `helpsetu-v1.2.0`);
 2. the `?v=` query on every cached asset in `index.html` and in the `CORE` list in `sw.js`.
 
-The service worker then installs the new files and deletes the old cache. Users see a **“A new version is ready”** bar with **Update now**; Settings → **Check for updates** also checks immediately. In the APK, the same action explains how to install the latest build and offers the developer's WhatsApp.
+The service worker then installs the new files and deletes the old cache. Users see a **“A new version is ready”** bar with **Update now**; Settings → **Check for updates** also checks immediately. In the APK the same button triggers the silent web-bundle updater.
+
+For an APK content release, bump `web.version` in `android/update.json` before running `bash android/build.sh`; the script writes the new `web-bundle.zip` and its SHA-256. Commit and push both files — existing installs pick the update up automatically.
 
 ### Language assets
 
@@ -60,7 +64,7 @@ node tools/validate.mjs
 
 ### Android APK (offline, no Play Store needed)
 
-A signed, installable `HelpSetu-1.1.0.apk` is included in the repository root. Copy it to an Android phone (Android 5.0 / API 21 or newer), open it, and tap **Install**. You may need to allow “Install unknown apps” once in your browser or file manager. The APK bundles the whole app, so it works offline immediately — no login, no data connection needed.
+A signed, installable `HelpSetu-1.2.0.apk` is included in the repository root. Copy it to an Android phone (Android 5.0 / API 21 or newer), open it, and tap **Install**. You may need to allow “Install unknown apps” once in your browser or file manager. The APK bundles the whole app, so it works offline immediately — no login, no data connection needed.
 
 The APK opens directly to the home screen. Calls use the phone's dialer through standard `tel:` links (the number is filled in; the app never calls on its own). External official links and the developer WhatsApp open in their respective apps.
 
@@ -70,7 +74,7 @@ To rebuild the APK from source (requires the Android command-line tools and a JD
 bash android/build.sh
 ```
 
-This produces `HelpSetu-1.1.0.apk` and verifies its signature with `apksigner`. The release keystore is created under `android/keystore/` on first build and is git-ignored — keep it safe so future updates keep the same signing identity. `android/update.json` describes the latest release for future in-app update checks.
+This produces `HelpSetu-1.2.0.apk` and verifies its signature with `apksigner`. The release keystore is created under `android/keystore/` on first build and is git-ignored — keep it safe so future updates keep the same signing identity. `android/update.json` describes the latest release for future in-app update checks.
 
 - **As a PWA on Android / Chrome, iPhone / Safari:** use the browser menu → **Add to Home screen** (or HelpSetu's **Install app** button). Desktop browsers show the app in a phone-width column; the experience is designed for mobile.
 
@@ -86,12 +90,12 @@ data-i18n.js            Generated translation overlay for the service catalogue
 core.js                 State, routing, search, theme, language, sheets, updates, offline
 views.js                Home, search, category and service-detail views
 views2.js               Saved, settings, state picker, about, privacy, emergency
-sw.js                   Offline app-shell cache (v1.1.0)
+sw.js                   Offline app-shell cache (v1.2.0)
 manifest.webmanifest    PWA metadata and shortcuts
 icons/                  SVG and generated PNG icons
 data/                   Curated source catalogue and cached translations
 android/                WebView wrapper, launcher icons, build.sh, update.json and web-bundle.zip
-HelpSetu-1.1.0.apk      Signed, installable APK
+HelpSetu-1.2.0.apk      Signed, installable APK
 tools/build-data.mjs    Merges curated data with verified source records → data.js
 tools/validate.mjs      Checks ids, numbers, sources, dates, links and translations
 ```
