@@ -41,8 +41,10 @@ import java.util.zip.ZipInputStream;
  * the number filled in. The app never places a call itself.
  */
 public class MainActivity extends Activity {
-    private static final String MANIFEST_URL =
-            "https://github.com/chandramondal-1/Help-Setu/raw/refs/heads/main/android/update.json";
+    private static final String COMMIT_API =
+            "https://api.github.com/repos/chandramondal-1/Help-Setu/commits/main";
+    private static final String RAW_BASE =
+            "https://raw.githubusercontent.com/chandramondal-1/Help-Setu/";
     /** Version of the web files bundled inside this APK. */
     private static final int BUNDLED_WEB_VERSION = 1;
 
@@ -120,7 +122,14 @@ public class MainActivity extends Activity {
     private void checkForWebUpdate() {
         UPDATER.execute(() -> {
             try {
-                JSONObject manifest = fetchJson(MANIFEST_URL + "?t=" + System.currentTimeMillis());
+                // Branch URLs are CDN-cached. Resolve the current commit through
+                // the GitHub API, then use immutable SHA-pinned raw URLs.
+                JSONObject commit = fetchJson(COMMIT_API + "?t=" + System.currentTimeMillis());
+                String sha = commit.optString("sha", "");
+                if (sha.isEmpty()) return;
+                String base = RAW_BASE + sha + "/";
+
+                JSONObject manifest = fetchJson(base + "android/update.json?t=" + System.currentTimeMillis());
                 JSONObject info = manifest.optJSONObject("web");
                 if (info == null) return;
 
@@ -129,12 +138,12 @@ public class MainActivity extends Activity {
                 int available = info.optInt("version", 0);
                 if (available <= installed) return;
 
-                String zipUrl = info.optString("url", "");
+                String file = info.optString("file", "");
                 String expected = info.optString("sha256", "");
-                if (zipUrl.isEmpty() || expected.isEmpty()) return;
+                if (file.isEmpty() || expected.isEmpty()) return;
 
                 File zip = new File(getFilesDir(), "web-bundle.zip");
-                download(zipUrl, zip);
+                download(base + file, zip);
                 if (!expected.equalsIgnoreCase(sha256(zip))) {
                     throw new IOException("checksum mismatch");
                 }
@@ -165,6 +174,8 @@ public class MainActivity extends Activity {
         HttpURLConnection c = (HttpURLConnection) new URL(urlString).openConnection();
         c.setConnectTimeout(8000);
         c.setReadTimeout(15000);
+        c.setRequestProperty("User-Agent", "HelpSetuAndroid/1.1.0");
+        c.setRequestProperty("Accept", "application/vnd.github+json");
         try {
             if (c.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 throw new IOException("HTTP " + c.getResponseCode());
@@ -185,6 +196,7 @@ public class MainActivity extends Activity {
         HttpURLConnection c = (HttpURLConnection) new URL(urlString).openConnection();
         c.setConnectTimeout(8000);
         c.setReadTimeout(30000);
+        c.setRequestProperty("User-Agent", "HelpSetuAndroid/1.1.0");
         try {
             if (c.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 throw new IOException("HTTP " + c.getResponseCode());

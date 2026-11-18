@@ -5,8 +5,8 @@
   "notes": "Offline-first directory with 25 Indian languages, one-tap calling and developer WhatsApp support.",
   "supportWhatsApp": "https://wa.me/918371998257",
   "web": {
-    "version": 4,
-    "url": "https://github.com/chandramondal-1/Help-Setu/raw/refs/heads/main/android/web-bundle.zip",
-    "sha256": "50032598fe6ef86a96a5365cbc3e6722da9b2b5a999858905dc8f0d856e0c884"
+    "version": 5,
+    "file": "android/web-bundle.zip",
+    "sha256": "1ef6679bd67d2114e78fe0464571e5072feb218ab8f0df2b2f00acd6a527dde1"
   }
 }

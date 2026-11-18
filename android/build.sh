@@ -47,7 +47,7 @@ with open(path, encoding='utf-8') as f:
     data = json.load(f)
 web = data.setdefault('web', {})
 web['version'] = int(web.get('version', 1)) + 1
-web['url'] = 'https://github.com/chandramondal-1/Help-Setu/raw/refs/heads/main/android/web-bundle.zip'
+web['file'] = 'android/web-bundle.zip'
 web['sha256'] = digest
 with open(path, 'w', encoding='utf-8') as f:
     json.dump(data, f, ensure_ascii=False, indent=2)
