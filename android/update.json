@@ -1,12 +1,12 @@
 {
-  "version": "1.2.1",
-  "versionCode": 3,
-  "apkUrl": "https://github.com/chandramondal-1/Help-Setu/releases/latest/download/HelpSetu-1.2.1.apk",
-  "notes": "HelpSetu 1.2.1 — first-load splash screen, silent in-app content updates, 25 Indian languages, one-tap calling and developer WhatsApp support.",
+  "version": "1.2.2",
+  "versionCode": 4,
+  "apkUrl": "https://github.com/chandramondal-1/Help-Setu/releases/latest/download/HelpSetu-1.2.2.apk",
+  "notes": "HelpSetu 1.2.2 — true full-screen layout behind the notch, 2-second splash, silent content updates, 25 Indian languages and one-tap calling.",
   "supportWhatsApp": "https://wa.me/918371998257",
   "web": {
-    "version": 7,
+    "version": 8,
     "file": "android/web-bundle.zip",
-    "sha256": "8854ea6ee752a493afeb9d0174e0db639d896746bd1972c2679815c6c076acb9"
+    "sha256": "a885fb6b821f8ac11ec60aa8fb44708ebcc096ebf64fb257bc5ae6a4447b166a"
   }
 }

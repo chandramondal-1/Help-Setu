@@ -3,8 +3,14 @@ package in.helpsetu.app;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.view.WindowInsets;
+import android.view.WindowInsetsController;
+import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -46,7 +52,7 @@ public class MainActivity extends Activity {
     private static final String RAW_BASE =
             "https://raw.githubusercontent.com/chandramondal-1/Help-Setu/";
     /** Version of the web files bundled inside this APK. */
-    private static final int BUNDLED_WEB_VERSION = 7;
+    private static final int BUNDLED_WEB_VERSION = 8;
 
     private static final ExecutorService UPDATER = Executors.newSingleThreadExecutor();
 
@@ -57,8 +63,9 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         web = new WebView(this);
-        web.setFitsSystemWindows(true);
+        web.setFitsSystemWindows(false);
         setContentView(web);
+        hideSystemBars();
 
         WebSettings s = web.getSettings();
         s.setJavaScriptEnabled(true);
@@ -70,7 +77,7 @@ public class MainActivity extends Activity {
         s.setLoadWithOverviewMode(true);
         s.setBuiltInZoomControls(false);
         s.setDisplayZoomControls(false);
-        s.setUserAgentString(s.getUserAgentString() + " HelpSetuAndroid/1.2.1");
+        s.setUserAgentString(s.getUserAgentString() + " HelpSetuAndroid/1.2.2");
 
         web.setWebViewClient(new WebViewClient() {
             @Override
@@ -103,6 +110,38 @@ public class MainActivity extends Activity {
 
         loadApp();
         checkForWebUpdate();
+    }
+
+    /** Draw under the notch and hide system bars so the app fills the whole screen. */
+    private void hideSystemBars() {
+        // Let content reach the physical cutout instead of leaving a black strip.
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            WindowManager.LayoutParams lp = getWindow().getAttributes();
+            lp.layoutInDisplayCutoutMode =
+                    WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+            getWindow().setAttributes(lp);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+            getWindow().setNavigationBarColor(Color.TRANSPARENT);
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            getWindow().setDecorFitsSystemWindows(false);
+            WindowInsetsController controller = getWindow().getInsetsController();
+            if (controller != null) {
+                controller.hide(WindowInsets.Type.statusBars() | WindowInsets.Type.navigationBars());
+                controller.setSystemBarsBehavior(
+                        WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+            }
+        } else {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
     }
 
     private File webRoot() {
@@ -174,7 +213,7 @@ public class MainActivity extends Activity {
         HttpURLConnection c = (HttpURLConnection) new URL(urlString).openConnection();
         c.setConnectTimeout(8000);
         c.setReadTimeout(15000);
-        c.setRequestProperty("User-Agent", "HelpSetuAndroid/1.2.1");
+        c.setRequestProperty("User-Agent", "HelpSetuAndroid/1.2.2");
         c.setRequestProperty("Accept", "application/vnd.github+json");
         try {
             if (c.getResponseCode() != HttpURLConnection.HTTP_OK) {
@@ -196,7 +235,7 @@ public class MainActivity extends Activity {
         HttpURLConnection c = (HttpURLConnection) new URL(urlString).openConnection();
         c.setConnectTimeout(8000);
         c.setReadTimeout(30000);
-        c.setRequestProperty("User-Agent", "HelpSetuAndroid/1.2.1");
+        c.setRequestProperty("User-Agent", "HelpSetuAndroid/1.2.2");
         try {
             if (c.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 throw new IOException("HTTP " + c.getResponseCode());
@@ -256,6 +295,12 @@ public class MainActivity extends Activity {
             if (kids != null) for (File k : kids) deleteRecursive(k);
         }
         f.delete();
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) hideSystemBars();
     }
 
     @Override

@@ -12,8 +12,8 @@ JAVA_HOME="${JAVA_HOME:-/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Content
 export JAVA_HOME
 export PATH="$JAVA_HOME/bin:$BT:$PATH"
 
-VERSION="1.2.1"
-CODE=3
+VERSION="1.2.2"
+CODE=4
 BUILD="$ANDROID/build"
 OUT="$ROOT/HelpSetu-$VERSION.apk"
 KS="$ANDROID/keystore/helpsetu.jks"

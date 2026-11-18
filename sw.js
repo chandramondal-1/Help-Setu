@@ -1,19 +1,19 @@
 /* HelpSetu service worker — offline-first app shell and verified directory. */
 'use strict';
 
-const VERSION = 'helpsetu-v1.2.1';
+const VERSION = 'helpsetu-v1.2.2';
 const CORE = [
   './',
   'index.html',
-  'styles.css?v=1.2.1',
-  'data.js?v=1.2.1',
-  'i18n.js?v=1.2.1',
-  'i18n-extra.js?v=1.2.1',
-  'data-i18n.js?v=1.2.1',
-  'core.js?v=1.2.1',
-  'views.js?v=1.2.1',
-  'views2.js?v=1.2.1',
-  'manifest.webmanifest',
+  'styles.css?v=1.2.2',
+  'data.js?v=1.2.2',
+  'i18n.js?v=1.2.2',
+  'i18n-extra.js?v=1.2.2',
+  'data-i18n.js?v=1.2.2',
+  'core.js?v=1.2.2',
+  'views.js?v=1.2.2',
+  'views2.js?v=1.2.2',
+  'manifest.webmanifest?v=1.2.2',
   'icons/icon.svg',
   'icons/icon-192.png',
   'icons/icon-512.png',
